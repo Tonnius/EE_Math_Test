@@ -5,6 +5,6 @@
 	<title>EE Math test</title>
 </head>
 <body>
-	Oled jõudnud esialgsele ee_math_test leheküljele.
+	<p>Oled jõudnud esialgsele ee_math_test leheküljele.</p>
 </body>
 </html>
