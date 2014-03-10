@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => 'http://'.(isset($_SERVER['app_url'])?$_SERVER['app_url']:'localhost'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return array(
 	|
 	*/
 
-	'key' => $_SERVER['app_key'],
+	'key' => isset($_SERVER['app_key'])?$_SERVER['app_key']:'K11jA3kA01IPD3eXG4b0pgpuB2L8Nx63',
 
 	/*
 	|--------------------------------------------------------------------------
