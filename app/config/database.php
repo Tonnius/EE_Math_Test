@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'database',
-			'username'  => 'root',
-			'password'  => '',
+			'host'      => isset($_SERVER['app_db_host'])?$_SERVER['app_db_host']:'localhost',
+			'database'  => isset($_SERVER['app_db_name'])?$_SERVER['app_db_name']:'mathtest',
+			'username'  => isset($_SERVER['app_db_user'])?$_SERVER['app_db_user']:'root',
+			'password'  => isset($_SERVER['app_db_password'])?$_SERVER['app_db_password']:'',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

@@ -15,3 +15,9 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::get('/test', function()
+{
+	$results = DB::select('select * from users where id = ?', array(1));
+	return "TERE!";
+});
