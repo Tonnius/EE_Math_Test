@@ -16,16 +16,16 @@
 		<div class="uk-grid">
 			<div class="uk-width-1-5 uk-hidden-small">
 				<div class="uk-width-1-1 uk-text-center uk-margin-bottom">
-				@if(1+1 == 2)
+				@if(Auth::check())
 					<img src="http://placekitten.com/125/125" width="125" height="125" alt="Avatar" /><br />	
 					<span>
-						Tere, Bert-Rick!<br />
-						<a href="#">Profiil</a> | <a href="#">Logi välja</a>
+						Tere, {{Auth::user()->username}}!<br />
+						<a href="#">Profiil</a> | <a href="/logout?_token={{csrf_token();}}">Logi välja</a>
 					</span>
 				@else
 					<span>
 						Tere, külaline!<br />
-						<a href="#">Logi sisse</a> | <a href="#">Registreeru</a>
+						<a href="/login">Logi sisse</a> | <a href="/signup">Registreeru</a>
 					</span>
 				@endif
 				</div>
@@ -70,7 +70,7 @@
 				</ul>
 			</div>
 
-			<div class="uk-width-4-5">
+			<div class="uk-width-1-1 uk-width-medium-4-5">
 				@yield('content')
 			</div>
 		</div>
