@@ -32,10 +32,15 @@
 						<input name="email_confirmation" class="uk-width-1-1 uk-form-large" type="email" placeholder="E-mail uuesti" value="{{Input::old('email_confirmation')}}" required>
 					</div>
 					<div class="uk-form-row">
+						{{ Form::captcha(array('theme' => 'white')) }}
+					</div>
+					<div class="uk-form-row">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-						<label><input type="checkbox" name="agree" @if(Input::old('agree')) checked @endif> Nõustun kasutustingimustega</label>
+						<label><input type="checkbox" name="agree" required @if(Input::old('agree')) checked @endif> Nõustun kasutustingimustega</label>
+					</div>
+					<div class="uk-form-row">
 						<input class="uk-width-1-1 uk-button uk-button-primary uk-button-large" type="submit" value="Registreeru">
 					</div>
-				</div>
+				</form>
 			</div>
 @endsection

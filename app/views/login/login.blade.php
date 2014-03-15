@@ -15,8 +15,8 @@
 				</div>
 				@endunless
 
-				@if(isset($signup_success))
-				<div class="uk-alert uk-alert-success">{{ $signup_success }}</div>
+				@if(Session::has('signup_success'))
+				<div class="uk-alert uk-alert-success">{{ Session::get('signup_success') }}</div>
 				@endif
 
 				<form class="uk-panel uk-panel-box uk-form" method="post" action="/login">
@@ -34,6 +34,6 @@
 						<label class="uk-float-left"><input type="checkbox" name="remember" @if(Input::old('remember')) checked @endif> Jäta mind meelde</label>
 						<a class="uk-float-right uk-link uk-link-muted" href="#">Unustasid parooli?</a>
 					</div>
-				</div>
+				</form>
 			</div>
 @endsection
