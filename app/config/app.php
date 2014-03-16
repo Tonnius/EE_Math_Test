@@ -29,6 +29,17 @@ return array(
 	'url' => 'http://'.(isset($_SERVER['app_url'])?$_SERVER['app_url']:'localhost'),
 
 	/*
+
+	Facebook API key
+
+	*/
+
+	'facebook' => array(
+		'appId' => '236700566516743',
+		'secret' => isset($_SERVER['facebook_secret'])?$_SERVER['facebook_secret']:''
+		),
+
+	/*
 	|--------------------------------------------------------------------------
 	| Application Timezone
 	|--------------------------------------------------------------------------

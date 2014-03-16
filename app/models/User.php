@@ -20,7 +20,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	protected $hidden = array('password');
 
 	// Whitelist
-	protected $fillable = array('username', 'email', 'password');
+	protected $fillable = array('username', 'email', 'password', 'facebookId');
 
 	/**
 	 * Get the unique identifier for the user.

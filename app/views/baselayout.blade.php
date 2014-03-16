@@ -67,6 +67,7 @@
 
 					<li class="uk-nav-divider"></li>
 					<li><a href="#">Kontakt</a></li>
+					<li><a href="/secret">Salajane leht</a></li>
 				</ul>
 			</div>
 

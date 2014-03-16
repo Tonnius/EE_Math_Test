@@ -20,6 +20,13 @@ ClassLoader::addDirectories(array(
 
 ));
 
+
+/* CSRF viga */
+App::error(function(Illuminate\Session\TokenMismatchException $exception)
+{
+    return Redirect::to('/')->with('csrf_error', 'Võltsitud päring!');
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application Error Logger

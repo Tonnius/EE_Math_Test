@@ -73,7 +73,6 @@ Route::filter('guest', function()
 
 Route::filter('csrf', function()
 {
-	// TODO: Viisakas veateade CSRF kohta
 	if (Session::token() != Input::get('_token'))
 	{
 		throw new Illuminate\Session\TokenMismatchException;
