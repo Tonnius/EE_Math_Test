@@ -411,7 +411,7 @@ mark {
 /*
  * Selection highlight
  */
-::-moz-selection {
+/*::-moz-selection {
   background: #3399ff;
   color: #ffffff;
   text-shadow: none;
@@ -420,7 +420,7 @@ mark {
   background: #3399ff;
   color: #ffffff;
   text-shadow: none;
-}
+}*/
 /*
  * Abbreviation and definition
  */
