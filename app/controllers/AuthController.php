@@ -26,7 +26,7 @@ class AuthController extends BaseController {
 
 		$me = $facebook->api('/me');
 
-		$usr = User::where('facebookId', '=', $me['id'])->first();
+		$usr = User::where('facebookId', '=', Hash::make($me['id']))->first();
 		if(empty($usr))
 		{
 			if(isset($me['email']))
@@ -44,9 +44,9 @@ class AuthController extends BaseController {
 					$usr = User::create(array(
 						'username' => $username,
 						'email' => $me['email'],
-						'facebookId' => $me['id']));
+						'facebookId' => Hash::make($me['id'])));
 				} else {
-					$usr->facebookId = $me['id'];
+					$usr->facebookId = Hash::make($me['id']);
 					$usr->save();
 				}
 			} else {
