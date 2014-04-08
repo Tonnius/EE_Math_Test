@@ -1,8 +1,4 @@
-{{--@if(!empty($options))
-<script type="text/javascript">
-	var RecaptchaOptions = {{ json_encode($options) }};
-</script>
-@endif--}}
+<?php AssetProcessor::add('recaptcha', '../app/assets/js/recaptchaOptions.js', ['group' => 'header']); ?>
 <script type="text/javascript" src="//www.google.com/recaptcha/api/challenge?k={{ $public_key }}<?php echo (isset($lang) ? '&hl='.$lang : '') ?>"></script>
 <noscript>
 	<iframe src="//www.google.com/recaptcha/api/noscript?k={{ $public_key }}<?php echo (isset($lang) ? '&hl='.$lang : '') ?>" height="300" width="500"></iframe><br>
