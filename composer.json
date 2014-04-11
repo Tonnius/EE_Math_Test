@@ -10,9 +10,9 @@
 
 		"awjudd/assetprocessor": "dev-master",
 		"natxet/CssMin": "dev-master",
-		"coffeescript/coffeescript": "dev-master"
+		"coffeescript/coffeescript": "dev-master",
 		"facebook/php-sdk": "dev-master",
-		"brainboxlabs/brain-socket": "v1.0.0",
+		"brainboxlabs/brain-socket": "v1.0.0"
 	},
 	"autoload": {
 		"classmap": [
