@@ -33,7 +33,7 @@
 			window.app = {};
 
 			app.BrainSocket = new BrainSocket(
-					new WebSocket('ws://localhost:8082'),
+					new WebSocket('ws://http://eemathtest.azurewebsites.net:8082'),
 					new BrainSocketPubSub()
 			);
 
