@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>EE Math test</title>
-	<link rel="stylesheet" type="text/css" href="/css/uikit.css">
-	<script src="/js/global.js"></script>
+	{{ AssetProcessor::styles() }}
+	{{ AssetProcessor::scripts('header') }}
 </head>
 <body>
 	<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
@@ -122,8 +122,7 @@
 			</ul>
 		</div>
 	</div>
-
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="/js/uikit.js"></script>
+	{{ AssetProcessor::scripts('cdn') }}
+	{{ AssetProcessor::scripts('footer') }}
 </body>
 </html>

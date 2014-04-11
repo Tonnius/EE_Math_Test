@@ -11,6 +11,9 @@
 |
 */
 
+// AssetProcessori jaoks
+Route::get('/assets/{type}/{name}', \Config::get('assetprocessor::controller.name') . '@' . \Config::get('assetprocessor::controller.method'));
+
 Route::get('/', function()
 {
 	return View::make('hello');

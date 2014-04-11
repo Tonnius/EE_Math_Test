@@ -117,7 +117,7 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-		'Greggilbert\Recaptcha\RecaptchaServiceProvider',
+		'Awjudd\AssetProcessor\AssetProcessorServiceProvider',
 		'BrainSocket\BrainSocketServiceProvider'
 	),
 
@@ -184,8 +184,8 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+		'AssetProcessor'  => 'Awjudd\AssetProcessor\Facades\AssetProcessorFacade',
 		'BrainSocket'     => 'BrainSocket\BrainSocketFacade',
-
 	),
 
 );
