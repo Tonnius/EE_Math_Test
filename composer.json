@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.1.*",
 		"greggilbert/recaptcha": "dev-master",
-		"facebook/php-sdk": "dev-master"
+		"facebook/php-sdk": "dev-master",
+		"brainboxlabs/brain-socket": "v1.0.0",
 	},
 	"autoload": {
 		"classmap": [

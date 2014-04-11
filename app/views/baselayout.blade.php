@@ -21,7 +21,7 @@
 					<img src="http://placekitten.com/125/125" width="125" height="125" alt="Avatar" /><br />	
 					<span>
 						Tere, {{Auth::user()->username}}!<br />
-						<a href="#">Profiil</a> | <a href="/logout?_token={{csrf_token();}}">Logi välja</a>
+						<a href="/secret">Profiil</a> | <a href="/logout?_token={{csrf_token();}}">Logi välja</a>
 					</span>
 				@else
 					<span>
@@ -30,7 +30,8 @@
 					</span>
 				@endif
 				</div>
-
+				
+		
 				<ul class="uk-nav uk-nav-side uk-nav-parent-icon" data-uk-nav>
 					<li @if (Request::is('/')) class="uk-active" @endif><a href="/">Avaleht</a></li>
 					<li @if (Request::is('eksamist')) class="uk-active" @endif><a href="/eksamist">Eksamist</a></li>
@@ -41,7 +42,7 @@
 						<ul class="uk-nav-sub">
 							<li><a href="#">1. Arvuhulgad</a>
 								<ul>
-									<li><a href="#">Avaldised</a></li>
+									<li><a href="/avaldised">Avaldised</a></li>
 									<li><a href="#">Võrrandid &amp; võrratused</a></li>
 								</ul>
 							</li>
@@ -64,7 +65,7 @@
 					</li>
 
 					<li><a href="#">Kuidas õppida</a></li>
-					<li><a href="#">Küsi abi</a></li>
+					<li><a href="/kysiAbi">Küsi abi</a></li>
 
 					<li class="uk-nav-divider"></li>
 					<li><a href="#">Kontakt</a></li>
