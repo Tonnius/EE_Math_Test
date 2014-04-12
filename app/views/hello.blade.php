@@ -12,9 +12,9 @@
 	
 	<p>Peatselt tekivad siia esmased leheküljed</p>
 	<script src='//code.jquery.com/jquery-1.7.2.min.js'></script>
-	<script src="http://localhost:40013/socket.io/socket.io.js"></script>
+	<script src="http://localhost:49199/socket.io/socket.io.js"></script>
 	<script>
-	  var socket = io.connect('http://localhost:40013');
+	  var socket = io.connect('http://localhost:49199');
 			socket.on('news', function (data) {
 	    console.log(data);
 	    socket.emit('my other event', { my: 'data' });
