@@ -1,26 +1,12 @@
 @extends('baselayout')
 
-@section('content')
-	
-		
-		<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span12" id="chat-app">
-				<h1>
-					Küsi abi
-				</h1>
-				<form class="form-inline">
-					<input type="text" class="input" id="chat-message" placeholder="Message and hit enter.">
-				</form>
-                <div id="chat-log">
-
-                </div>
-			</div>
-		</div>
-	</div>
+@section('content')	
+	<h1>
+		Küsi abi
+	</h1>
 
 	<!--@scripts start-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/brain-socket.min.js"></script>
@@ -33,7 +19,7 @@
 			window.app = {};
 
 			app.BrainSocket = new BrainSocket(
-					new WebSocket('ws://http://eemathtest.azurewebsites.net:8082'),
+					new WebSocket('ws://localhost:8082'),
 					new BrainSocketPubSub()
 			);
 
@@ -73,6 +59,100 @@
 						return event.keyCode != 13; }
 			);
 		});
+	</script>-->
+	<link href="http://mychatappmathtest.cloudapp.net/stylesheets/style.css" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+	<script src="http://mychatappmathtest.cloudapp.net/socket.io/socket.io.js"></script>
+	<script>
+	 // socket.io specific code
+      var socket = io.connect("http://mychatappmathtest.cloudapp.net");
+
+      socket.on('connect', function () {
+        $('#chat').addClass('connected');
+      });
+
+      socket.on('announcement', function (msg) {
+        $('#lines').append($('<p>').append($('<em>').text(msg)));
+      });
+
+      socket.on('nicknames', function (nicknames) {
+        $('#nicknames').empty().append($('<span>Online: </span>'));
+        for (var i in nicknames) {
+          $('#nicknames').append($('<b>').text(nicknames[i]));
+        }
+      });
+
+      socket.on('user message', message);
+      socket.on('reconnect', function () {
+        $('#lines').remove();
+        message('System', 'Reconnected to the server');
+      });
+
+      socket.on('reconnecting', function () {
+        message('System', 'Attempting to re-connect to the server');
+      });
+
+      socket.on('error', function (e) {
+        message('System', e ? e : 'A unknown error occurred');
+      });
+
+      function message (from, msg) {
+        $('#lines').append($('<p>').append($('<b>').text(from), msg));
+      }
+
+      // dom manipulation
+      $(function () {
+        $('#set-nickname').submit(function (ev) {
+          socket.emit('nickname', $('#nick').val(), function (set) {
+            if (!set) {
+              clear();
+              return $('#chat').addClass('nickname-set');
+            }
+            $('#nickname-err').css('visibility', 'visible');
+          });
+          return false;
+        });
+
+        $('#send-message').submit(function () {
+          message('me', $('#message').val());
+          socket.emit('user message', $('#message').val());
+          clear();
+          $('#lines').get(0).scrollTop = 10000000;
+          return false;
+        });
+
+        function clear () {
+          $('#message').val('').focus();
+        };
+      });     
+
+	                
+
 	</script>
+	<div id="chat">
+	<div id="nickname">
+		<form id="set-nickname" class="wrap">
+			<p>Palun sisesta oma hüüdnimi ja vajuta 'enter' klahvi.</p>
+			<input id="nick">
+			<p id="nickname-err">Hüüdnimi juba kasutusel</p>
+		</form>
+	</div>
+	<div id="connecting">
+	<div class="wrap">Ühendun serveriga
+	</div>
+	</div>
+	<div id="messages">
+	<div id="nicknames">
+		
+	</div>
+	<div id="lines">
+		
+	</div>
+	</div>
+	<form id="send-message">
+		<input id="message">
+		<button>Saada</button>
+	</form>
+	</div>
 	
 @endsection

@@ -45,4 +45,4 @@ Route::get('login/facebook/callback', array('before' => 'guest', 'uses' => 'Auth
 
 Route::get('avaldised', array('before' => 'auth','uses' => 'TestController@GetTest'));
 Route::post('avaldised', array('before' => 'auth','uses' => 'TestController@CheckTest'));
-//Route::get('kysiAbi', array('before' => 'auth','uses' => 'TestController@GetTest'));
+
