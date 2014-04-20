@@ -29,10 +29,10 @@ Route::get('kysiAbi', array('before' => 'auth', function()
 	return View::make('kysiAbi');
 }));
 
-Route::get('secret', array('before' => 'auth', function()
+/*Route::get('secret', array('before' => 'auth', function()
 {
 	return View::make('salajane');
-}));
+}));*/
 
 Route::get('avaldised', array('before' => 'guest', 'uses' => 'AuthController@loginPage'));
 Route::get('login', array('before' => 'guest', 'uses' => 'AuthController@loginPage'));
@@ -45,4 +45,7 @@ Route::get('login/facebook/callback', array('before' => 'guest', 'uses' => 'Auth
 
 Route::get('avaldised', array('before' => 'auth','uses' => 'TestController@GetTest'));
 Route::post('avaldised', array('before' => 'auth','uses' => 'TestController@CheckTest'));
+
+Route::get('secret', array('before' => 'auth','uses' => 'ProfileController@GetProfileInfo'));
+
 
