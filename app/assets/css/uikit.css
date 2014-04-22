@@ -411,7 +411,7 @@ mark {
 /*
  * Selection highlight
  */
-::-moz-selection {
+/*::-moz-selection {
   background: #3399ff;
   color: #ffffff;
   text-shadow: none;
@@ -420,7 +420,7 @@ mark {
   background: #3399ff;
   color: #ffffff;
   text-shadow: none;
-}
+}*/
 /*
  * Abbreviation and definition
  */
@@ -644,11 +644,11 @@ iframe {
 }
 /* Fix viewport for IE10 snap mode
  ========================================================================== */
-@media screen and (max-width: 400px) {
+/*@media screen and (max-width: 400px) {
   @-ms-viewport {
     width: device-width;
   }
-}
+}*/
 /* ========================================================================
    Component: Grid
  ========================================================================== */
@@ -2875,9 +2875,9 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 /*
  * Removes box-shadow for invalid controls in Firefox.
  */
-.uk-form :invalid {
+/*.uk-form :invalid {
   box-shadow: none;
-}
+}*/
 /*
  * Legend style
  * 1. `margin-bottom` is not working in Safari and Opera.
@@ -5627,7 +5627,7 @@ a.uk-thumbnail:focus {
   padding: 20px;
   width: 600px;
   max-width: 100%;
-  max-width: calc(100% - 20px);
+  /*max-width: calc(100% - 20px);*/
   /* 3 */
   background: #ffffff;
   /* 4 */
@@ -6467,9 +6467,9 @@ a.uk-thumbnail:focus {
   img {
     max-width: 100% !important;
   }
-  @page {
+  /*@page {
     margin: 0.5cm;
-  }
+  }*/
   p,
   h2,
   h3 {
