@@ -46,11 +46,24 @@ Route::get('login/facebook/callback', array('before' => 'guest', 'uses' => 'Auth
 Route::get('avaldised', array('before' => 'auth','uses' => 'TestController@GetTest'));
 Route::post('avaldised', array('before' => 'auth','uses' => 'TestController@CheckTest')); 
 
-Route::post('/', function()
+Route::get('/protip', function()
 {
-			$data = array(
-				"html" => '<div id="tip"><h1>Alusta õppimist enne eksamieelset ööd!</h1></div>'
-			);
+	$lause = '';
+	switch(rand() % 3)
+	{
+		case 0:
+			$lause = 'Alusta õppimist enne eksamieelset ööd!';
+			break;
+		case 1:
+			$lause = 'Ära mängi arvutimänge!';
+			break;
+		case 2:
+			$lause = 'Söö tükike šokolaadi!';
+			break;
+	}
+	$data = array(
+		'html' => '<div id="tip"><h1>'.$lause.'</h1></div>'
+	);
 	return Response::json($data);
 });
 
