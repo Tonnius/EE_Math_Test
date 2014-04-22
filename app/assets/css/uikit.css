@@ -5023,6 +5023,7 @@ a.uk-thumbnail:focus {
     background-position: 30px 0;
   }
 }*/
+/*
 @keyframes uk-progress-bar-stripes {
   0% {
     background-position: 0 0;
@@ -5030,7 +5031,7 @@ a.uk-thumbnail:focus {
   100% {
     background-position: 30px 0;
   }
-}
+}*/
 /* ========================================================================
    Component: Animation
  ========================================================================== */
@@ -5113,6 +5114,7 @@ a.uk-thumbnail:focus {
     opacity: 1;
   }
 }*/
+/*
 @keyframes uk-fade {
   0% {
     opacity: 0;
@@ -5120,7 +5122,7 @@ a.uk-thumbnail:focus {
   100% {
     opacity: 1;
   }
-}
+}*/
 /*
  * Scale up
  */
@@ -5134,7 +5136,7 @@ a.uk-thumbnail:focus {
     -webkit-transform: scale(1);
   }
 }*/
-@keyframes uk-scale-up {
+/*@keyframes uk-scale-up {
   0% {
     opacity: 0;
     transform: scale(0.2);
@@ -5143,7 +5145,7 @@ a.uk-thumbnail:focus {
     opacity: 1;
     transform: scale(1);
   }
-}
+}*/
 /*
  * Scale down
  */
@@ -5157,6 +5159,7 @@ a.uk-thumbnail:focus {
     -webkit-transform: scale(1);
   }
 }*/
+/*
 @keyframes uk-scale-down {
   0% {
     opacity: 0;
@@ -5166,7 +5169,7 @@ a.uk-thumbnail:focus {
     opacity: 1;
     transform: scale(1);
   }
-}
+}*/
 /*
  * Slide top
  */
@@ -5180,6 +5183,7 @@ a.uk-thumbnail:focus {
     -webkit-transform: translateY(0);
   }
 }*/
+/*
 @keyframes uk-slide-top {
   0% {
     opacity: 0;
@@ -5189,7 +5193,7 @@ a.uk-thumbnail:focus {
     opacity: 1;
     transform: translateY(0);
   }
-}
+}*/
 /*
  * Slide bottom
  */
@@ -5203,6 +5207,7 @@ a.uk-thumbnail:focus {
     -webkit-transform: translateY(0);
   }
 }*/
+/*
 @keyframes uk-slide-bottom {
   0% {
     opacity: 0;
@@ -5212,7 +5217,7 @@ a.uk-thumbnail:focus {
     opacity: 1;
     transform: translateY(0);
   }
-}
+}*/
 /*
  * Slide left
  */
@@ -5226,6 +5231,7 @@ a.uk-thumbnail:focus {
     -webkit-transform: translateX(0);
   }
 }*/
+/*
 @keyframes uk-slide-left {
   0% {
     opacity: 0;
@@ -5235,7 +5241,7 @@ a.uk-thumbnail:focus {
     opacity: 1;
     transform: translateX(0);
   }
-}
+}*/
 /*
  * Slide right
  */
@@ -5249,6 +5255,7 @@ a.uk-thumbnail:focus {
     -webkit-transform: translateX(0);
   }
 }*/
+/*
 @keyframes uk-slide-right {
   0% {
     opacity: 0;
@@ -5258,7 +5265,7 @@ a.uk-thumbnail:focus {
     opacity: 1;
     transform: translateX(0);
   }
-}
+}*/
 /*
  * Shake
  */
@@ -5295,6 +5302,7 @@ a.uk-thumbnail:focus {
     -webkit-transform: translateX(-1px);
   }
 }*/
+/*
 @keyframes uk-shake {
   0%,
   100% {
@@ -5328,6 +5336,7 @@ a.uk-thumbnail:focus {
     transform: translateX(-1px);
   }
 }
+*/
 /*
  * Slide top fixed
  */
@@ -5341,6 +5350,7 @@ a.uk-thumbnail:focus {
     -webkit-transform: translateY(0);
   }
 }*/
+/*
 @keyframes uk-slide-top-fixed {
   0% {
     opacity: 0;
@@ -5350,7 +5360,7 @@ a.uk-thumbnail:focus {
     opacity: 1;
     transform: translateY(0);
   }
-}
+}*/
 /*
  * Slide bottom fixed
  */
@@ -5364,6 +5374,7 @@ a.uk-thumbnail:focus {
     -webkit-transform: translateY(0);
   }
 }*/
+/*
 @keyframes uk-slide-bottom-fixed {
   0% {
     opacity: 0;
@@ -5373,7 +5384,7 @@ a.uk-thumbnail:focus {
     opacity: 1;
     transform: translateY(0);
   }
-}
+}*/
 /*
  * Spin
  */
@@ -5385,6 +5396,7 @@ a.uk-thumbnail:focus {
     -webkit-transform: rotate(359deg);
   }
 }*/
+/*
 @keyframes uk-spin {
   0% {
     transform: rotate(0deg);
@@ -5392,7 +5404,7 @@ a.uk-thumbnail:focus {
   100% {
     transform: rotate(359deg);
   }
-}
+}*/
 /* ========================================================================
    Component: Dropdown
  ========================================================================== */
