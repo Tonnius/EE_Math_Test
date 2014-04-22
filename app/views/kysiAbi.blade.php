@@ -1,10 +1,9 @@
 @extends('baselayout')
 
 @section('content')	
-	<h1>
-		Küsi abi
-	</h1>
+	<h1>Küsi abi</h1>
 
+<?php /*
 	<!--@scripts start-->
 	<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
@@ -59,100 +58,35 @@
 						return event.keyCode != 13; }
 			);
 		});
-	</script>-->
-	<link href="http://mychatappmathtest.cloudapp.net/stylesheets/style.css" rel="stylesheet">
-	<script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
-	<script src="http://mychatappmathtest.cloudapp.net/socket.io/socket.io.js"></script>
-	<script>
-	 // socket.io specific code
-      var socket = io.connect("http://mychatappmathtest.cloudapp.net");
+	</script>--> */ ?>
+	<?php
+		AssetProcessor::cdn('chatapp_css', 'http://mychatappmathtest.cloudapp.net/stylesheets/style.css');
+		AssetProcessor::cdn('socketio_js', 'http://mychatappmathtest.cloudapp.net/socket.io/socket.io.js');
+		AssetProcessor::add('chatapp_js', '../app/assets/js/chatapp.js', ['group' => 'footer']);
+	?>
 
-      socket.on('connect', function () {
-        $('#chat').addClass('connected');
-      });
-
-      socket.on('announcement', function (msg) {
-        $('#lines').append($('<p>').append($('<em>').text(msg)));
-      });
-
-      socket.on('nicknames', function (nicknames) {
-        $('#nicknames').empty().append($('<span>Online: </span>'));
-        for (var i in nicknames) {
-          $('#nicknames').append($('<b>').text(nicknames[i]));
-        }
-      });
-
-      socket.on('user message', message);
-      socket.on('reconnect', function () {
-        $('#lines').remove();
-        message('System', 'Reconnected to the server');
-      });
-
-      socket.on('reconnecting', function () {
-        message('System', 'Attempting to re-connect to the server');
-      });
-
-      socket.on('error', function (e) {
-        message('System', e ? e : 'A unknown error occurred');
-      });
-
-      function message (from, msg) {
-        $('#lines').append($('<p>').append($('<b>').text(from), msg));
-      }
-
-      // dom manipulation
-      $(function () {
-        $('#set-nickname').submit(function (ev) {
-          socket.emit('nickname', $('#nick').val(), function (set) {
-            if (!set) {
-              clear();
-              return $('#chat').addClass('nickname-set');
-            }
-            $('#nickname-err').css('visibility', 'visible');
-          });
-          return false;
-        });
-
-        $('#send-message').submit(function () {
-          message('me', $('#message').val());
-          socket.emit('user message', $('#message').val());
-          clear();
-          $('#lines').get(0).scrollTop = 10000000;
-          return false;
-        });
-
-        function clear () {
-          $('#message').val('').focus();
-        };
-      });     
-
-	                
-
-	</script>
 	<div id="chat">
-	<div id="nickname">
-		<form id="set-nickname" class="wrap">
-			<p>Palun sisesta oma hüüdnimi ja vajuta 'enter' klahvi.</p>
-			<input id="nick">
-			<p id="nickname-err">Hüüdnimi juba kasutusel</p>
+		<div id="nickname">
+			<form id="set-nickname" class="wrap">
+				<p>Palun sisesta oma hüüdnimi ja vajuta 'enter' klahvi.</p>
+				<input id="nick" />
+				<p id="nickname-err">Hüüdnimi juba kasutusel</p>
+			</form>
+		</div>
+
+		<div id="connecting">
+			<div class="wrap">Ühendun serveriga</div>
+		</div>
+
+		<div id="messages">
+			<div id="nicknames"></div>
+			<div id="lines"></div>
+		</div>
+
+		<form id="send-message">
+			<input id="message" />
+			<button>Saada</button>
 		</form>
-	</div>
-	<div id="connecting">
-	<div class="wrap">Ühendun serveriga
-	</div>
-	</div>
-	<div id="messages">
-	<div id="nicknames">
-		
-	</div>
-	<div id="lines">
-		
-	</div>
-	</div>
-	<form id="send-message">
-		<input id="message">
-		<button>Saada</button>
-	</form>
 	</div>
 	
 @endsection
