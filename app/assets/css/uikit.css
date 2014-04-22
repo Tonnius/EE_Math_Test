@@ -5015,14 +5015,14 @@ a.uk-thumbnail:focus {
   -webkit-animation: uk-progress-bar-stripes 2s linear infinite;
   animation: uk-progress-bar-stripes 2s linear infinite;
 }
-@-webkit-keyframes uk-progress-bar-stripes {
+/*@-webkit-keyframes uk-progress-bar-stripes {
   0% {
     background-position: 0 0;
   }
   100% {
     background-position: 30px 0;
   }
-}
+}*/
 @keyframes uk-progress-bar-stripes {
   0% {
     background-position: 0 0;
@@ -5105,14 +5105,14 @@ a.uk-thumbnail:focus {
 /*
  * Fade
  */
-@-webkit-keyframes uk-fade {
+/*@-webkit-keyframes uk-fade {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
   }
-}
+}*/
 @keyframes uk-fade {
   0% {
     opacity: 0;
@@ -5124,7 +5124,7 @@ a.uk-thumbnail:focus {
 /*
  * Scale up
  */
-@-webkit-keyframes uk-scale-up {
+/*@-webkit-keyframes uk-scale-up {
   0% {
     opacity: 0;
     -webkit-transform: scale(0.2);
@@ -5133,7 +5133,7 @@ a.uk-thumbnail:focus {
     opacity: 1;
     -webkit-transform: scale(1);
   }
-}
+}*/
 @keyframes uk-scale-up {
   0% {
     opacity: 0;
@@ -5147,7 +5147,7 @@ a.uk-thumbnail:focus {
 /*
  * Scale down
  */
-@-webkit-keyframes uk-scale-down {
+/*@-webkit-keyframes uk-scale-down {
   0% {
     opacity: 0;
     -webkit-transform: scale(1.8);
@@ -5156,7 +5156,7 @@ a.uk-thumbnail:focus {
     opacity: 1;
     -webkit-transform: scale(1);
   }
-}
+}*/
 @keyframes uk-scale-down {
   0% {
     opacity: 0;
@@ -5170,7 +5170,7 @@ a.uk-thumbnail:focus {
 /*
  * Slide top
  */
-@-webkit-keyframes uk-slide-top {
+/*@-webkit-keyframes uk-slide-top {
   0% {
     opacity: 0;
     -webkit-transform: translateY(-100%);
@@ -5179,7 +5179,7 @@ a.uk-thumbnail:focus {
     opacity: 1;
     -webkit-transform: translateY(0);
   }
-}
+}*/
 @keyframes uk-slide-top {
   0% {
     opacity: 0;
@@ -5193,7 +5193,7 @@ a.uk-thumbnail:focus {
 /*
  * Slide bottom
  */
-@-webkit-keyframes uk-slide-bottom {
+/*@-webkit-keyframes uk-slide-bottom {
   0% {
     opacity: 0;
     -webkit-transform: translateY(100%);
@@ -5202,7 +5202,7 @@ a.uk-thumbnail:focus {
     opacity: 1;
     -webkit-transform: translateY(0);
   }
-}
+}*/
 @keyframes uk-slide-bottom {
   0% {
     opacity: 0;
@@ -5216,7 +5216,7 @@ a.uk-thumbnail:focus {
 /*
  * Slide left
  */
-@-webkit-keyframes uk-slide-left {
+/*@-webkit-keyframes uk-slide-left {
   0% {
     opacity: 0;
     -webkit-transform: translateX(-100%);
@@ -5225,7 +5225,7 @@ a.uk-thumbnail:focus {
     opacity: 1;
     -webkit-transform: translateX(0);
   }
-}
+}*/
 @keyframes uk-slide-left {
   0% {
     opacity: 0;
@@ -5239,7 +5239,7 @@ a.uk-thumbnail:focus {
 /*
  * Slide right
  */
-@-webkit-keyframes uk-slide-right {
+/*@-webkit-keyframes uk-slide-right {
   0% {
     opacity: 0;
     -webkit-transform: translateX(100%);
@@ -5248,7 +5248,7 @@ a.uk-thumbnail:focus {
     opacity: 1;
     -webkit-transform: translateX(0);
   }
-}
+}*/
 @keyframes uk-slide-right {
   0% {
     opacity: 0;
@@ -5262,7 +5262,7 @@ a.uk-thumbnail:focus {
 /*
  * Shake
  */
-@-webkit-keyframes uk-shake {
+/*@-webkit-keyframes uk-shake {
   0%,
   100% {
     -webkit-transform: translateX(0);
@@ -5294,7 +5294,7 @@ a.uk-thumbnail:focus {
   90% {
     -webkit-transform: translateX(-1px);
   }
-}
+}*/
 @keyframes uk-shake {
   0%,
   100% {
@@ -5331,7 +5331,7 @@ a.uk-thumbnail:focus {
 /*
  * Slide top fixed
  */
-@-webkit-keyframes uk-slide-top-fixed {
+/*@-webkit-keyframes uk-slide-top-fixed {
   0% {
     opacity: 0;
     -webkit-transform: translateY(-10px);
@@ -5340,7 +5340,7 @@ a.uk-thumbnail:focus {
     opacity: 1;
     -webkit-transform: translateY(0);
   }
-}
+}*/
 @keyframes uk-slide-top-fixed {
   0% {
     opacity: 0;
@@ -5354,7 +5354,7 @@ a.uk-thumbnail:focus {
 /*
  * Slide bottom fixed
  */
-@-webkit-keyframes uk-slide-bottom-fixed {
+/*@-webkit-keyframes uk-slide-bottom-fixed {
   0% {
     opacity: 0;
     -webkit-transform: translateY(10px);
@@ -5363,7 +5363,7 @@ a.uk-thumbnail:focus {
     opacity: 1;
     -webkit-transform: translateY(0);
   }
-}
+}*/
 @keyframes uk-slide-bottom-fixed {
   0% {
     opacity: 0;
@@ -5377,14 +5377,14 @@ a.uk-thumbnail:focus {
 /*
  * Spin
  */
-@-webkit-keyframes uk-spin {
+/*@-webkit-keyframes uk-spin {
   0% {
     -webkit-transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(359deg);
   }
-}
+}*/
 @keyframes uk-spin {
   0% {
     transform: rotate(0deg);
