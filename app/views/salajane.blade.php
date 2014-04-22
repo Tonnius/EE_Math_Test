@@ -22,9 +22,14 @@
 						}
 					}
 
-					$progress=intval($success/($count[0]->NumberOfTestsDone)*100);
-					if ($progress > 100) {
-						$progress = 100;
+					if($count != null)
+					{
+						$progress=intval($success/($count[0]->NumberOfTestsDone)*100);
+						if ($progress > 100) {
+							$progress = 100;
+						}
+					} else {
+						$progress = 0;
 					}
 					//print_r($tasks);
 					
@@ -35,7 +40,7 @@
 							<div class="uk-progress-bar" style="width: {{$progress}}%">{{$progress}}%</div>
 						</div>
 					</div>
-					<p>Teste tehtud:{{$count[0]->NumberOfTestsDone}}</p>
+					<p>Teste tehtud: <?php echo ($count != null ? $count[0]->NumberOfTestsDone : $progress); ?></p>
 					<p>Testid edukalt läbitud:{{$success}}</p>
 				</div>
 
