@@ -44,8 +44,18 @@ Route::get('login/facebook', array('before' => 'guest', 'uses' => 'AuthControlle
 Route::get('login/facebook/callback', array('before' => 'guest', 'uses' => 'AuthController@loginFacebookCallback'));
 
 Route::get('avaldised', array('before' => 'auth','uses' => 'TestController@GetTest'));
-Route::post('avaldised', array('before' => 'auth','uses' => 'TestController@CheckTest'));
+Route::post('avaldised', array('before' => 'auth','uses' => 'TestController@CheckTest')); 
+
+Route::post('/', function()
+{
+			$data = array(
+				"html" => '<div id="tip"><h1>Alusta õppimist enne eksamieelset ööd!</h1></div>'
+			);
+	return Response::json($data);
+});
 
 Route::get('secret', array('before' => 'auth','uses' => 'ProfileController@GetProfileInfo'));
+
+
 
 

@@ -16,6 +16,7 @@ App::before(function($request)
 	AssetProcessor::add('uikit_css', '../app/assets/css/uikit.css');
 	AssetProcessor::cdn('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js');
 	AssetProcessor::cdn('angular', '//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.5/angular.min.js');
+	AssetProcessor::add('eldarion-ajax', '../app/assets/js/eldarion-ajax.min.js', ['group' => 'footer']);
 	AssetProcessor::add('uikit_js', '../app/assets/js/uikit.js', ['group' => 'footer']);
 });
 

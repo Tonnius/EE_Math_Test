@@ -11,7 +11,21 @@
 	<p>Oled jõudnud esialgsele ee_math_test leheküljele.</p>
 	
 	<p>Peatselt tekivad siia esmased leheküljed</p>
-	
+		
+
+<div class="container">
+      
+			<a href="/" class="btn ajax" data-method="post" data-replace="#tip">
+		  		<i class="icon icon-refresh"></i> Tänane nõuanne õppimiseks! &raquo;
+			</a>
+      
+	        <div id="tip">
+		        <h1></h1>
+	        </div>
+	    </div>
+   
+    
+
 
 	
 @endsection

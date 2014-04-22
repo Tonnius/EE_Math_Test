@@ -16,27 +16,30 @@
 				<ul id="login-options" class="uk-switcher uk-margin">
 					<li class="uk-active">
 						<?php
-							$tasksCount = DB::table('tasks')->count();
-							$counter = 0;
+							$tasks = DB::table('tasks')->get();
+							$success = 0;
 							foreach($results as $x=>$x_value)
 							{
-								if($x_value->pakutud_vastus == $x_value->korrektne_vastus) {
-									$counter++;
+								if($x_value->pakutud_vastus == $tasks[0]->korrektne_vastus) {
+									$success++;
 								}
 							}
 
-							$counter=$counter/$tasksCount*100;
-							if ($counter > 100) {
-								$counter = 100;
+							$progress=intval($success/($count[0]->NumberOfTestsDone)*100);
+							if ($progress > 100) {
+								$progress = 100;
 							}
+							//print_r($tasks);
+							
 						?>
 						<div class="uk-panel uk-panel-box uk-panel-box-secondary">
 							<div class="uk-animation-slide-bottom">
 								<div class="uk-progress">
-									<div class="uk-progress-bar" style="width: <?php echo $counter; ?>%">{{$counter}}%</div>
+									<div class="uk-progress-bar" style="width: {{$progress}}%">{{$progress}}%</div>
 								</div>
 							</div>
-							
+							<p>Teste tehtud:{{$count[0]->NumberOfTestsDone}}</p>
+							<p>Testid edukalt läbitud:{{$success}}</p>
 						</div>
 
 
@@ -56,7 +59,7 @@
 						
 						<div class="uk-panel uk-panel-box uk-panel-box-secondary">
 							<?php
-								foreach($results as $x=>$x_value)
+							foreach($results as $x=>$x_value)
 							  {
 							  echo "Test nr:" . ($x+1) . " (sooritatud: ".$x_value->created_at . ") <br>";
 							  echo "Ülesanne nr: " . $x_value->task_id. " <br>";

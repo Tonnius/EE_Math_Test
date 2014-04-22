@@ -5,9 +5,7 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.1.*",
-
 		"greggilbert/recaptcha": "dev-master",
-
 		"awjudd/assetprocessor": "dev-master",
 		"natxet/CssMin": "dev-master",
 		"coffeescript/coffeescript": "dev-master",
