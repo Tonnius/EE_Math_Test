@@ -2,6 +2,11 @@
 
 @section('content')
 	
+@if(count($tasks)==0)	
+	<h2>Ülesandeid pole veel lisatud</h2>
+	
+@endif
+@if(count($tasks)>0)
 	<h2>Ülesanded</h2>
 	@if($result)
 		<?php
@@ -19,20 +24,12 @@
 		?>
 	@endif
 
-	<p>
-	<?php 
-	//echo print_r($tasks); 
-	//echo print_r($teema); 
-	?>
-	</p>
-
 	<form class="uk-panel uk-panel-box uk-form" method="post" action="/teemad/{{$teema}}/ylesanded">
 
 		<?php 
-			//foreach ($tasks as $task)
+			
 			for ($i = 0; $i < count($tasks); $i++) 
 			{
-				//echo $tasks[$i]->kirjeldus;
 				echo '<label class="uk-form-label" for="answers['.$i.']">Küsimus '.($i+1).': '.$tasks[$i]->kirjeldus.'</label>';
 				echo '<div class="uk-form-row">
 					<input type="hidden" name="taskIds[]" value="'.$tasks[$i]->id.'" />
@@ -41,13 +38,11 @@
 				
 			}
 		?>
-		
-		
-		
+
 		<div>
 			<input class="uk-width-1-3 uk-button uk-button-primary uk-button-small" type="submit" value="Vasta" />
 		</div>
 	</form>
-
+@endif
 
 @endsection

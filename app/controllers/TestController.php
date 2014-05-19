@@ -5,6 +5,7 @@ class TestController extends BaseController {
 	
 	public function GetTest($teema)
 	{
+		$teema = str_replace(" ","_",$teema);
 		$tasks = DB::select("SELECT * 
 							FROM tasks 
 							WHERE teemad = '".$teema."' 

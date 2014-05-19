@@ -43,24 +43,24 @@
 							<li><a href="/teemad/Arvuhulgad">1. Arvuhulgad</a>
 								<ul>
 									<li><a href="/teemad/Avaldised">Avaldised</a></li>
-									<li><a href="#">Võrrandid &amp; võrratused</a></li>
+									<li><a href="/teemad/Võrrandid ja võrratused">Võrrandid ja võrratused</a></li>
 								</ul>
 							</li>
-							<li><a href="#">2. Trigonomeetria</a></li>
-							<li><a href="#">3. Vektor tasandil</a>
+							<li><a href="/teemad/Trigonomeetria">2. Trigonomeetria</a></li>
+							<li><a href="/teemad/Vektor tasandil">3. Vektor tasandil</a>
 								<ul>
-									<li><a href="#">Joone võrrand</a></li>
+									<li><a href="/teemad/Joone võrrand">Joone võrrand</a></li>
 								</ul>
 							</li>
-							<li><a href="#">4. Tõenäosus ja statistika</a></li>
-							<li><a href="#">5. Funktsioonid I</a></li>
-							<li><a href="#">6. Funktsioonid II</a></li>
-							<li><a href="#">7. Tasandilised kujundid</a>
+							<li><a href="/teemad/Tõenäosus ja statistika">4. Tõenäosus ja statistika</a></li>
+							<li><a href="/teemad/Funktsioonid I">5. Funktsioonid I</a></li>
+							<li><a href="/teemad/Funktsioonid II">6. Funktsioonid II</a></li>
+							<li><a href="/teemad/Tasandilised kujundid">7. Tasandilised kujundid</a>
 								<ul>
-									<li><a href="#">Integraal</a></li>
+									<li><a href="/teemad/">Integraal</a></li>
 								</ul>
 							</li>
-							<li><a href="#">8. Stereomeetria</a></li>
+							<li><a href="/teemad/Stereomeetria">8. Stereomeetria</a></li>
 						</ul>
 					</li>
 
