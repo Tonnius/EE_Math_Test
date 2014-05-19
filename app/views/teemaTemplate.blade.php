@@ -1,10 +1,7 @@
 @extends('baselayout')
 
 @section('content')
-	<h1>{{$teema}}</h1>
-	
-	<a href="/teemad/{{$teema}}/ylesanded">Ülesanded</a>
+	<h1>{{$teema->name}}</h1>
 
-
-
+	<a href="/teemad/{{$teema->name}}/ylesanded">Ülesanded</a>
 @endsection

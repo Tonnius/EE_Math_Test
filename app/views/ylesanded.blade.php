@@ -4,18 +4,18 @@
 	
 @if(count($tasks)==0)	
 	<h2>Ülesandeid pole veel lisatud</h2>
-	
-@endif
-@if(count($tasks)>0)
+@else
 	<h2>Ülesanded</h2>
 	@if($result)
 		<?php
 			if ($result == 'korras')
 				echo '<div class="uk-alert uk-alert-success">Kõik oli õige, tubli!</div>';
-			else {
+			else
+			{
 				echo '<div class="uk-alert uk-alert-danger">Kahjuks polnud vastus õige küsimuste puhul nr: ';
-				for ($i = 0; $i < count($result); $i++) {
-					if ($i == count($result)-1)
+				for ($i = 0, $c = count($result); $i < $c; ++$i)
+				{
+					if ($i == $c-1)
 						echo $result[$i].'. <br>Proovi uuesti!</div>';
 					else
 						echo $result[$i].', ';
@@ -24,11 +24,11 @@
 		?>
 	@endif
 
-	<form class="uk-panel uk-panel-box uk-form" method="post" action="/teemad/{{$teema}}/ylesanded">
+	<form class="uk-panel uk-panel-box uk-form" method="post" action="/teemad/{{$teema->name}}/ylesanded">
 
 		<?php 
 			
-			for ($i = 0; $i < count($tasks); $i++) 
+			for ($i = 0, $c = count($tasks); $i < $c; ++$i) 
 			{
 				echo '<label class="uk-form-label" for="answers['.$i.']">Küsimus '.($i+1).': '.$tasks[$i]->kirjeldus.'</label>';
 				echo '<div class="uk-form-row">

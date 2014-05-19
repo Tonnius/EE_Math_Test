@@ -43,11 +43,21 @@ Route::post('signup', array('before' => 'guest|csrf', 'uses' => 'AuthController@
 Route::get('login/facebook', array('before' => 'guest', 'uses' => 'AuthController@loginFacebook'));
 Route::get('login/facebook/callback', array('before' => 'guest', 'uses' => 'AuthController@loginFacebookCallback'));
 
-Route::get('teemaTemplate', array('before' => 'guest', 'uses' => 'AuthController@loginPage'));
-Route::get('teemad/{teema}', array('before' => 'auth', function($teema)
+//Route::get('teemaTemplate', array('before' => 'guest', 'uses' => 'AuthController@loginPage'));
+
+Route::bind('teema', function($value, $route)
+{
+	$ret = Topic::where('name', $value)->first();
+	if($ret)
+		return $ret;
+	throw new Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+});
+
+Route::get('teemad/{teema}', array('before' => 'auth', function(Topic $teema)
 {
 	return View::make('teemaTemplate', array('teema' => $teema));
 }));
+
 Route::get('teemad/{teema}/ylesanded', array('before' => 'auth','uses' => 'TestController@GetTest'));
 Route::post('teemad/{teema}/ylesanded', array('before' => 'auth','uses' => 'TestController@CheckTest')); 
 
@@ -75,7 +85,3 @@ Route::get('/protip', function()
 });
 
 Route::get('secret', array('before' => 'auth','uses' => 'ProfileController@GetProfileInfo'));
-
-
-
-

@@ -10,18 +10,15 @@
 			<input name="kirjeldus" class="uk-width-1-1 uk-form-large" type="text" placeholder="Kirjeldus" required />
 			<input name="vastus" class="uk-width-1-1 uk-form-large" type="text" placeholder="Korrektne vastus" required />
 			<label class="uk-form-label" for="teema">Teema:</label>
-			<br>
-			<select name="teema" >
-			<?php 
-			foreach ($teemad as $teema)
-			{
-				$teemaKirjeldus = str_replace("_"," ",$teema);
-				echo '<option value='.$teema.'>'.$teemaKirjeldus.'</option>';
-			}
-			?>
+			<br />
+
+			<select name="teema">
+			@foreach($teemad as $id => $teema)
+				<option value="{{$id}}">{{$teema}}</option>
+			@endforeach
 			</select>
 		</div>
-		<br>
+		<br />
 		<div>
 			<input class="uk-width-1-3 uk-button uk-button-primary uk-button-small" type="submit" value="Lisa" />
 		</div>

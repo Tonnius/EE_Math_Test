@@ -5,32 +5,19 @@ class YlController extends BaseController {
 
 	public function InsertTestFields()
 	{
-
-		$type = DB::select( DB::raw("SHOW COLUMNS FROM tasks WHERE Field = 'teemad'") )[ 0 ]->Type;
-		preg_match('/^enum\((.*)\)$/', $type, $matches);
-	  $teemad = array();
-	  foreach( explode(',', $matches[1]) as $value )
-	  {
-		$v = trim( $value, "'" );
-		$teemad = array_add($teemad, $v, $v);
-	  }
-
-		return View::make('lisaYl', array('teemad' => $teemad));
+		return View::make('lisaYl', array('teemad' => Topic::lists('name', 'id')));
 	}
+
 	public function AddTest()
 	{
-
 		Eloquent::unguard();
 		$uusTask = Task::create(array('kirjeldus' => Input::get('kirjeldus'),
 							'korrektne_vastus' => Input::get('vastus'), 
-							'teemad' => Input::get('teema')));
+							'topic_id' => Input::get('teema')));
 
-		if ($uusTask) {
+		if($uusTask)
 			return Redirect::to('lisaYl')->with('result', 'Ülesanne lisatud!');
-		} else {
+		else
 			return Redirect::to('lisaYl')->with('result', 'Ülesannet ei suudetud lisada, proovi uuesti.');
-		}
-
 	}
-
 }

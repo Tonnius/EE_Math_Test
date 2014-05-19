@@ -7,6 +7,6 @@ class TaskTableSeeder extends Seeder {
 		DB::table('tasks')->delete();
 
 		
-		Task::create(array('kirjeldus' => '1+1', 'korrektne_vastus' => 2, 'teemad' => 'Avaldised'));
+		Task::create(array('kirjeldus' => '1+1', 'korrektne_vastus' => 2, 'topic_id' => 2));
 	}
 }

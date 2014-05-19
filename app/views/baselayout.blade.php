@@ -36,7 +36,7 @@
 					<li @if (Request::is('/')) class="uk-active" @endif><a href="/">Avaleht</a></li>
 					<li @if (Request::is('eksamist')) class="uk-active" @endif><a href="/eksamist">Eksamist</a></li>
 
-					<li class="uk-parent">
+					<li class="uk-parent @if (Request::is('teemad/*')) uk-active @endif">
 						<a href="#">Teemad</a>
 						<!-- Mhm, ma tean et need on kitsa eksami teemad -->
 						<ul class="uk-nav-sub">
@@ -57,7 +57,7 @@
 							<li><a href="/teemad/Funktsioonid II">6. Funktsioonid II</a></li>
 							<li><a href="/teemad/Tasandilised kujundid">7. Tasandilised kujundid</a>
 								<ul>
-									<li><a href="/teemad/">Integraal</a></li>
+									<li><a href="/teemad/Integraal">Integraal</a></li>
 								</ul>
 							</li>
 							<li><a href="/teemad/Stereomeetria">8. Stereomeetria</a></li>
@@ -65,12 +65,12 @@
 					</li>
 
 					<li><a href="#">Kuidas õppida</a></li>
-					<li><a href="/kysiAbi">Küsi abi</a></li>
+					<li @if (Request::is('kysiAbi')) class="uk-active" @endif><a href="/kysiAbi">Küsi abi</a></li>
 
 					<li class="uk-nav-divider"></li>
 					<li><a href="#">Kontakt</a></li>
-					<li><a href="/secret">Salajane leht</a></li>
-					<li><a href="/lisaYl">Lisa ülesanne</a></li>
+					<li @if (Request::is('secret')) class="uk-active" @endif><a href="/secret">Salajane leht</a></li>
+					<li @if (Request::is('lisaYl')) class="uk-active" @endif><a href="/lisaYl">Lisa ülesanne</a></li>
 				</ul>
 			</div>
 

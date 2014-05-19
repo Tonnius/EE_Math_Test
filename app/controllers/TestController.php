@@ -3,18 +3,14 @@
 class TestController extends BaseController {
 
 	
-	public function GetTest($teema)
+	public function GetTest(Topic $teema)
 	{
-		$teema = str_replace(" ","_",$teema);
-		$tasks = DB::select("SELECT * 
-							FROM tasks 
-							WHERE teemad = '".$teema."' 
-							ORDER BY rand() 
-							LIMIT 2");
+		$tasks = $teema->tasks()->take(2)->orderBy('id', 'rand()')->get();
 							
 		return View::make('ylesanded', array('tasks' => $tasks, 'teema' => $teema, 'result'=> ''));
 	}
-	public function CheckTest($teema)
+
+	public function CheckTest(Topic $teema)
 	{
 		$answers = Input::get('answers');
 		$TaskIds = Input::get('taskIds');

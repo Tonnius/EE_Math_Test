@@ -15,7 +15,7 @@
 				<?php
 					$tasks = DB::table('tasks')->get();
 					$success = 0;
-					foreach($results as $x=>$x_value)
+					foreach($results as $x => $x_value)
 					{
 						if($x_value->pakutud_vastus == $tasks[0]->korrektne_vastus) {
 							$success++;
@@ -43,8 +43,6 @@
 					<p>Teste tehtud: <?php echo ($count != null ? $count[0]->NumberOfTestsDone : $progress); ?></p>
 					<p>Testid edukalt läbitud:{{$success}}</p>
 				</div>
-
-
 			</li>
 			<li class="uk-active">
 				<div class="uk-panel uk-panel-box uk-panel-box-secondary">
