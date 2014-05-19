@@ -64,7 +64,7 @@
 						</ul>
 					</li>
 
-					<li><a href="#">Kuidas õppida</a></li>
+					<li><a href="/kuidasOppida">Kuidas õppida</a></li>
 					<li @if (Request::is('kysiAbi')) class="uk-active" @endif><a href="/kysiAbi">Küsi abi</a></li>
 
 					<li class="uk-nav-divider"></li>

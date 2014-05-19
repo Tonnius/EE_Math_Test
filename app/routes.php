@@ -29,10 +29,10 @@ Route::get('kysiAbi', array('before' => 'auth', function()
 	return View::make('kysiAbi');
 }));
 
-/*Route::get('secret', array('before' => 'auth', function()
+Route::get('kuidasOppida', function()
 {
-	return View::make('salajane');
-}));*/
+	return View::make('kuidasOppida');
+});
 
 
 Route::get('login', array('before' => 'guest', 'uses' => 'AuthController@loginPage'));
@@ -43,7 +43,7 @@ Route::post('signup', array('before' => 'guest|csrf', 'uses' => 'AuthController@
 Route::get('login/facebook', array('before' => 'guest', 'uses' => 'AuthController@loginFacebook'));
 Route::get('login/facebook/callback', array('before' => 'guest', 'uses' => 'AuthController@loginFacebookCallback'));
 
-//Route::get('teemaTemplate', array('before' => 'guest', 'uses' => 'AuthController@loginPage'));
+
 
 Route::bind('teema', function($value, $route)
 {
