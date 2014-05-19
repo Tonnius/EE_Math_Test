@@ -30,7 +30,7 @@
 				    </li>
 				    <li class="uk-width-medium-1-2 uk-text-right">
 					@if(Auth::check())
-						Tere, {{Auth::user()->username}}! | <a href="/secret">Profiil</a> | <a href="/logout?_token={{csrf_token();}}">Logi välja</a>
+						Tere, {{Auth::user()->username}}! | <a href="/profiil">Profiil</a> | <a href="/logout?_token={{csrf_token();}}">Logi välja</a>
 					@else
 						Tere, külaline! | <a href="/login">Logi sisse</a> | <a href="/signup">Registreeru</a>
 					@endif
@@ -82,7 +82,6 @@
 
 					<li class="uk-nav-divider"></li>
 					<li><a href="#">Kontakt</a></li>
-					<li @if (Request::is('secret')) class="uk-active" @endif><a href="/secret">Salajane leht</a></li>
 					<li @if (Request::is('lisaYl')) class="uk-active" @endif><a href="/lisaYl">Lisa ülesanne</a></li>
 				</ul>
 			</div>

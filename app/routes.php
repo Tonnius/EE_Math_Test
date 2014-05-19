@@ -29,11 +29,6 @@ Route::get('kysiAbi', array('before' => 'auth', function()
 	return View::make('kysiAbi');
 }));
 
-/*Route::get('secret', array('before' => 'auth', function()
-{
-	return View::make('salajane');
-}));*/
-
 
 Route::get('login', array('before' => 'guest', 'uses' => 'AuthController@loginPage'));
 Route::post('login', array('before' => 'guest|csrf', 'uses' => 'AuthController@loginSubmit'));
@@ -42,8 +37,6 @@ Route::get('signup', array('before' => 'guest', 'uses' => 'AuthController@signup
 Route::post('signup', array('before' => 'guest|csrf', 'uses' => 'AuthController@signupSubmit'));
 Route::get('login/facebook', array('before' => 'guest', 'uses' => 'AuthController@loginFacebook'));
 Route::get('login/facebook/callback', array('before' => 'guest', 'uses' => 'AuthController@loginFacebookCallback'));
-
-//Route::get('teemaTemplate', array('before' => 'guest', 'uses' => 'AuthController@loginPage'));
 
 Route::bind('teema', function($value, $route)
 {
@@ -63,25 +56,7 @@ Route::post('teemad/{teema}/ylesanded', array('before' => 'auth','uses' => 'Test
 
 Route::get('lisaYl', array('before' => 'auth','uses' => 'YlController@InsertTestFields'));
 Route::post('lisaYl', array('before' => 'auth','uses' => 'YlController@AddTest'));
-Route::get('/protip', function()
-{
-	$lause = '';
-	switch(rand() % 3)
-	{
-		case 0:
-			$lause = 'Alusta õppimist enne eksamieelset ööd!';
-			break;
-		case 1:
-			$lause = 'Ära mängi arvutimänge!';
-			break;
-		case 2:
-			$lause = 'Söö tükike šokolaadi!';
-			break;
-	}
-	$data = array(
-		'html' => '<h1>'.$lause.'</h1>'
-	);
-	return Response::json($data);
-});
 
-Route::get('secret', array('before' => 'auth','uses' => 'ProfileController@GetProfileInfo'));
+Route::get('protip', array('uses' => 'ProtipController@Protip'));
+
+Route::get('profiil', array('before' => 'auth','uses' => 'ProfileController@GetProfileInfo'));
