@@ -25,7 +25,7 @@ class ProfileController extends BaseController {
 								= ?
 								', array(Auth::user()->id));*/
 
-		return View::make('salajane',array('results' => $results, 'count' => $count));
+		return View::make('profiil', array('results' => $results, 'count' => $count));
 	}
 
 }
