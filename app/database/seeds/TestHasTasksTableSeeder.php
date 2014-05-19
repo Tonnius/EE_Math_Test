@@ -14,6 +14,6 @@ class TestHasTasksTableSeeder extends Seeder {
                                         ->first()
                                         ->id;
                                                                      
-		TestHasTasks::create(array('task_id' => $taskId, 'test_id' => $testId, 'pakutud_vastus' => '1'));
+		TestHasTasks::create(array('task_id' => $taskId, 'test_id' => $testId, 'pakutud_vastus' => '2'));
 	}
 }

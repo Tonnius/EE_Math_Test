@@ -16,8 +16,11 @@ class CreateTasksTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('kirjeldus');
-			$table->integer('korrektne_vastus'); //should be string?
-			$table->enum('teemad', array('Arvuhulgad', 'Avaldised', 'Võrrandid'));
+			$table->string('korrektne_vastus'); //should be string?
+			$table->enum('teemad', array('Arvuhulgad', 'Avaldised', 'Võrrandid_ja_Võrratused',
+										'Trigonomeetria', 'Vektor_tasandil', 'Joone_võrrand',
+										'Tõenäosus_ja_statistika', 'Funktsioonid_I', 'Funktsioonid_II',
+										"Tasandilised_kujundid", 'Integraalid', 'Stereomeetria'));
 			//$table->string('formula'); 
 			//$table->foreign('test_id')->references('id')->on('tests');
 			

@@ -40,9 +40,9 @@
 						<a href="#">Teemad</a>
 						<!-- Mhm, ma tean et need on kitsa eksami teemad -->
 						<ul class="uk-nav-sub">
-							<li><a href="#">1. Arvuhulgad</a>
+							<li><a href="/teemad/Arvuhulgad">1. Arvuhulgad</a>
 								<ul>
-									<li><a href="/avaldised">Avaldised</a></li>
+									<li><a href="/teemad/Avaldised">Avaldised</a></li>
 									<li><a href="#">Võrrandid &amp; võrratused</a></li>
 								</ul>
 							</li>
@@ -70,6 +70,7 @@
 					<li class="uk-nav-divider"></li>
 					<li><a href="#">Kontakt</a></li>
 					<li><a href="/secret">Salajane leht</a></li>
+					<li><a href="/lisaYl">Lisa ülesanne</a></li>
 				</ul>
 			</div>
 

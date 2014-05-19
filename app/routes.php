@@ -34,7 +34,7 @@ Route::get('kysiAbi', array('before' => 'auth', function()
 	return View::make('salajane');
 }));*/
 
-Route::get('avaldised', array('before' => 'guest', 'uses' => 'AuthController@loginPage'));
+
 Route::get('login', array('before' => 'guest', 'uses' => 'AuthController@loginPage'));
 Route::post('login', array('before' => 'guest|csrf', 'uses' => 'AuthController@loginSubmit'));
 Route::get('logout', array('before' => 'auth|csrf', 'uses' => 'AuthController@logout'));
@@ -43,9 +43,16 @@ Route::post('signup', array('before' => 'guest|csrf', 'uses' => 'AuthController@
 Route::get('login/facebook', array('before' => 'guest', 'uses' => 'AuthController@loginFacebook'));
 Route::get('login/facebook/callback', array('before' => 'guest', 'uses' => 'AuthController@loginFacebookCallback'));
 
-Route::get('avaldised', array('before' => 'auth','uses' => 'TestController@GetTest'));
-Route::post('avaldised', array('before' => 'auth','uses' => 'TestController@CheckTest')); 
+Route::get('teemaTemplate', array('before' => 'guest', 'uses' => 'AuthController@loginPage'));
+Route::get('teemad/{teema}', array('before' => 'auth', function($teema)
+{
+	return View::make('teemaTemplate', array('teema' => $teema));
+}));
+Route::get('teemad/{teema}/ylesanded', array('before' => 'auth','uses' => 'TestController@GetTest'));
+Route::post('teemad/{teema}/ylesanded', array('before' => 'auth','uses' => 'TestController@CheckTest')); 
 
+Route::get('lisaYl', array('before' => 'auth','uses' => 'YlController@InsertTestFields'));
+Route::post('lisaYl', array('before' => 'auth','uses' => 'YlController@AddTest'));
 Route::get('/protip', function()
 {
 	$lause = '';
