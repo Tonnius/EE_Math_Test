@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-<h1>Kitsa ja laia Matemaatika Riigieksamist 2014</h1>
+<h1>Kitsa ja laia matemaatika Riigieksamist 2014</h1>
  
 <h2>Riigieksami eesmärgid </h2>
  
