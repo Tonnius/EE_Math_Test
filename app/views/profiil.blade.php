@@ -10,7 +10,7 @@
 @section('content')
 	<h1>Profiil</h1>
 
-	<div class="uk-width-medium-3-4 uk-container-left">
+	<div class="uk-width-medium-1-1 uk-container-left">
 		<ul class="uk-tab" data-uk-tab="{connect:'#login-options'}">
 			<li class="uk-active"><a href="">Progress</a></li>
 			<li><a href="">Kasutaja Info</a></li>
