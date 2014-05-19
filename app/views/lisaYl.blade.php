@@ -1,5 +1,12 @@
 @extends('baselayout')
 
+@section('breadcrumb')
+<ul class="uk-breadcrumb">
+	<li><a href="/">Avaleht</a></li>
+	<li class="uk-active"><span>Lisa ülesanne</span></li>
+</ul>
+@endsection
+
 @section('content')
 	<h1>Lisa uus ülesanne</h1>
 	@if(Session::has('result'))
@@ -12,7 +19,7 @@
 			<label class="uk-form-label" for="teema">Teema:</label>
 			<br />
 
-			<select name="teema">
+			<select id="teema" name="teema">
 			@foreach($teemad as $id => $teema)
 				<option value="{{$id}}">{{$teema}}</option>
 			@endforeach

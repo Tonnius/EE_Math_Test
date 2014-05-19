@@ -1,5 +1,12 @@
 @extends('baselayout')
 
+@section('breadcrumb')
+<ul class="uk-breadcrumb">
+	<li><a href="/">Avaleht</a></li>
+	<li class="uk-active"><span>Logi sisse</span></li>
+</ul>
+@endsection
+
 @section('content')
 			<h1>Logi sisse</h1>
 
@@ -39,7 +46,7 @@
 							</div>
 							<div class="uk-form-row uk-text-small">
 								<label class="uk-float-left"><input type="checkbox" name="remember" @if(Input::old('remember')) checked @endif> Jäta mind meelde</label>
-								<a class="uk-float-right uk-link uk-link-muted" href="#">Unustasid parooli?</a>
+								<!--a class="uk-float-right uk-link uk-link-muted" href="#">Unustasid parooli?</a-->
 							</div>
 						</form>
 					</li>

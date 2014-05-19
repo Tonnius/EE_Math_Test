@@ -79,7 +79,7 @@ Route::get('/protip', function()
 			break;
 	}
 	$data = array(
-		'html' => '<div id="tip"><h1>'.$lause.'</h1></div>'
+		'html' => '<h1>'.$lause.'</h1>'
 	);
 	return Response::json($data);
 });
