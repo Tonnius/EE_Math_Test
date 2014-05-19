@@ -15,23 +15,36 @@
 		</nav>
 
 		<div class="uk-grid">
-			<div class="uk-width-1-5 uk-hidden-small">
-				<div class="uk-width-1-1 uk-text-center uk-margin-bottom">
-				@if(Auth::check())
-					<img src="http://placekitten.com/125/125" width="125" height="125" alt="Avatar" /><br />	
-					<span>
-						Tere, {{Auth::user()->username}}!<br />
-						<a href="/secret">Profiil</a> | <a href="/logout?_token={{csrf_token();}}">Logi välja</a>
-					</span>
-				@else
-					<span>
-						Tere, külaline!<br />
-						<a href="/login">Logi sisse</a> | <a href="/signup">Registreeru</a>
-					</span>
-				@endif
+			<div class="uk-width-1-1">
+				<div class="uk-width-1-1 uk-hidden-small" id="header_logo">
+					@if(Auth::check())
+					<div id="header_avatar">
+						<img src="http://placekitten.com/125/125" width="125" height="125" alt="Avatar" />
+					</div>
+					@endif
 				</div>
+
+				<ul class="uk-grid" data-uk-grid-match="{target:'.uk-panel', row: true}">
+				    <li class="uk-width-medium-1-2 uk-hidden-small">
+						@yield('breadcrumb', '&nbsp;')
+				    </li>
+				    <li class="uk-width-medium-1-2 uk-text-right">
+					@if(Auth::check())
+						Tere, {{Auth::user()->username}}! | <a href="/secret">Profiil</a> | <a href="/logout?_token={{csrf_token();}}">Logi välja</a>
+					@else
+						Tere, külaline! | <a href="/login">Logi sisse</a> | <a href="/signup">Registreeru</a>
+					@endif
+				    </li>
+				</ul>
+			
+
+			<div class="uk-grid">
 				
-		
+			
+
+			<div class="uk-width-1-5 uk-hidden-small">
+
+
 				<ul class="uk-nav uk-nav-side uk-nav-parent-icon" data-uk-nav>
 					<li @if (Request::is('/')) class="uk-active" @endif><a href="/">Avaleht</a></li>
 					<li @if (Request::is('eksamist')) class="uk-active" @endif><a href="/eksamist">Eksamist</a></li>
@@ -40,27 +53,27 @@
 						<a href="#">Teemad</a>
 						<!-- Mhm, ma tean et need on kitsa eksami teemad -->
 						<ul class="uk-nav-sub">
-							<li><a href="/teemad/Arvuhulgad">1. Arvuhulgad</a>
+							<li><a href="/teemad/{{urlencode('Arvuhulgad')}}">1. Arvuhulgad</a>
 								<ul>
-									<li><a href="/teemad/Avaldised">Avaldised</a></li>
-									<li><a href="/teemad/Võrrandid ja võrratused">Võrrandid ja võrratused</a></li>
+									<li><a href="/teemad/{{urlencode('Avaldised')}}">Avaldised</a></li>
+									<li><a href="/teemad/{{urlencode('Võrrandid ja võrratused')}}">Võrrandid ja võrratused</a></li>
 								</ul>
 							</li>
-							<li><a href="/teemad/Trigonomeetria">2. Trigonomeetria</a></li>
-							<li><a href="/teemad/Vektor tasandil">3. Vektor tasandil</a>
+							<li><a href="/teemad/{{urlencode('Trigonomeetria')}}">2. Trigonomeetria</a></li>
+							<li><a href="/teemad/{{urlencode('Vektor tasandil')}}">3. Vektor tasandil</a>
 								<ul>
-									<li><a href="/teemad/Joone võrrand">Joone võrrand</a></li>
+									<li><a href="/teemad/{{urlencode('Joone võrrand')}}">Joone võrrand</a></li>
 								</ul>
 							</li>
-							<li><a href="/teemad/Tõenäosus ja statistika">4. Tõenäosus ja statistika</a></li>
-							<li><a href="/teemad/Funktsioonid I">5. Funktsioonid I</a></li>
-							<li><a href="/teemad/Funktsioonid II">6. Funktsioonid II</a></li>
-							<li><a href="/teemad/Tasandilised kujundid">7. Tasandilised kujundid</a>
+							<li><a href="/teemad/{{urlencode('Tõenäosus ja statistika')}}">4. Tõenäosus ja statistika</a></li>
+							<li><a href="/teemad/{{urlencode('Funktsioonid I')}}">5. Funktsioonid I</a></li>
+							<li><a href="/teemad/{{urlencode('Funktsioonid II')}}">6. Funktsioonid II</a></li>
+							<li><a href="/teemad/{{urlencode('Tasandilised kujundid')}}">7. Tasandilised kujundid</a>
 								<ul>
-									<li><a href="/teemad/Integraal">Integraal</a></li>
+									<li><a href="/teemad/{{urlencode('Integraal')}}">Integraal</a></li>
 								</ul>
 							</li>
-							<li><a href="/teemad/Stereomeetria">8. Stereomeetria</a></li>
+							<li><a href="/teemad/{{urlencode('Stereomeetria')}}">8. Stereomeetria</a></li>
 						</ul>
 					</li>
 
@@ -76,6 +89,8 @@
 
 			<div class="uk-width-1-1 uk-width-medium-4-5">
 				@yield('content')
+			</div>
+</div>
 			</div>
 		</div>
 	</div>

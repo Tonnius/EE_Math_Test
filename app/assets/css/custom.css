@@ -1,0 +1,12 @@
+#header_logo
+{
+	background: skyblue;
+	height: 175px;
+}
+
+#header_avatar
+{
+	float:right;
+	margin-top: 25px;
+	margin-right: 25px;
+}

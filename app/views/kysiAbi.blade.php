@@ -1,5 +1,12 @@
 @extends('baselayout')
 
+@section('breadcrumb')
+<ul class="uk-breadcrumb">
+	<li><a href="/">Avaleht</a></li>
+	<li class="uk-active"><span>Küsi abi</span></li>
+</ul>
+@endsection
+
 @section('content')	
 	<h1>Küsi abi</h1>
 
@@ -60,7 +67,7 @@
 		});
 	</script>--> */ ?>
 	<?php
-		AssetProcessor::cdn('chatapp_css', 'http://mychatappmathtest.cloudapp.net/stylesheets/style.css');
+		AssetProcessor::add('chatapp_css', '../app/assets/css/chat.css');
 		AssetProcessor::cdn('socketio_js', 'http://mychatappmathtest.cloudapp.net/socket.io/socket.io.js');
 		AssetProcessor::add('chatapp_js', '../app/assets/js/chatapp.js', ['group' => 'footer']);
 	?>

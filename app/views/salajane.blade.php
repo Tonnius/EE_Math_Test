@@ -1,5 +1,12 @@
 @extends('baselayout')
 
+@section('breadcrumb')
+<ul class="uk-breadcrumb">
+	<li><a href="/">Avaleht</a></li>
+	<li class="uk-active"><span>Profiil</span></li>
+</ul>
+@endsection
+
 @section('content')
 	<h1>Profiil</h1>
 
@@ -41,7 +48,7 @@
 						</div>
 					</div>
 					<p>Teste tehtud: <?php echo ($count != null ? $count[0]->NumberOfTestsDone : $progress); ?></p>
-					<p>Testid edukalt läbitud:{{$success}}</p>
+					<p>Testid edukalt läbitud: {{$success}}</p>
 				</div>
 			</li>
 			<li class="uk-active">
@@ -61,7 +68,7 @@
 					<?php
 						foreach($results as $x => $x_value)
 						{
-							echo 'Test nr:' . ($x+1) . ' (sooritatud: '.$x_value->created_at . ')<br />';
+							echo 'Test nr: ' . ($x+1) . ' (sooritatud: '.$x_value->created_at . ')<br />';
 							echo 'Ülesanne nr: ' . $x_value->task_id. '<br />';
 							echo 'Sinu vastus: ' . $x_value->pakutud_vastus. '<br />';
 							echo '<br />';

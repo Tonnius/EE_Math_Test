@@ -1,5 +1,14 @@
 @extends('baselayout')
 
+@section('breadcrumb')
+<ul class="uk-breadcrumb">
+	<li><a href="/">Avaleht</a></li>
+	<li><span>Teemad</span></li>
+	<li><span><a href="/teemad/{{urlencode($teema->name)}}">{{$teema->name}}</a></span></li>
+	<li class="uk-active"><span>Ülesanded</span></li>
+</ul>
+@endsection
+
 @section('content')
 	
 @if(count($tasks)==0)	
@@ -24,7 +33,7 @@
 		?>
 	@endif
 
-	<form class="uk-panel uk-panel-box uk-form" method="post" action="/teemad/{{$teema->name}}/ylesanded">
+	<form class="uk-panel uk-panel-box uk-form" method="post" action="/teemad/{{urlencode($teema->name)}}/ylesanded">
 
 		<?php 
 			

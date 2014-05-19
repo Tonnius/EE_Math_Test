@@ -1,5 +1,12 @@
 @extends('baselayout')
 
+@section('breadcrumb')
+<ul class="uk-breadcrumb">
+	<li><a href="/">Avaleht</a></li>
+	<li class="uk-active"><span>Eksamist</span></li>
+</ul>
+@endsection
+
 @section('content')
 <h1>Kitsa ja laia Matemaatika Riigieksamist 2014</h1>
  
