@@ -10,6 +10,8 @@
 	@endif
 	<h1>Matemaatika riigieksamiks õppimine.<br /> Lihtsamalt.</h1>
 	
+	<p>Matemaatikast on võimalik mõelda ka teisiti. Veendu selles järgmist videot vaadates.</p>
+
 	<div class="videoOuter">
 		<div class="videoWrapper">
 			<iframe width="520" height="390" src="//www.youtube-nocookie.com/embed/J_0d19vJtB0?rel=0" frameborder="0" allowfullscreen></iframe>

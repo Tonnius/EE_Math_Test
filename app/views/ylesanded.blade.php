@@ -34,21 +34,15 @@
 	@endif
 
 	<form class="uk-panel uk-panel-box uk-form" method="post" action="/teemad/{{urlencode($teema->name)}}/ylesanded">
+		@for ($i = 0, $c = count($tasks); $i < $c; ++$i) 
+			<div class="uk-form-row">
+				<label class="uk-form-label" for="answer_{{$i}}">Küsimus {{$i+1}}: {{$tasks[$i]->kirjeldus}}</label>
+				<input type="hidden" name="taskIds[]" value="{{$tasks[$i]->id}}" />
+				<input id="answer_{{$i}}" name="answers[]" class="uk-width-1-1 uk-form-large" type="text" placeholder="Vastus" required="required" />
+			</div>
+		@endfor
 
-		<?php 
-			
-			for ($i = 0, $c = count($tasks); $i < $c; ++$i) 
-			{
-				echo '<label class="uk-form-label" for="answers['.$i.']">Küsimus '.($i+1).': '.$tasks[$i]->kirjeldus.'</label>';
-				echo '<div class="uk-form-row">
-					<input type="hidden" name="taskIds[]" value="'.$tasks[$i]->id.'" />
-					<input name="answers[]" class="uk-width-1-1 uk-form-large" type="text" placeholder="Vastus" required />
-					</div><br>';
-				
-			}
-		?>
-
-		<div>
+		<div class="uk-form-row">
 			<input class="uk-width-1-3 uk-button uk-button-primary uk-button-small" type="submit" value="Vasta" />
 		</div>
 	</form>
