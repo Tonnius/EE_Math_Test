@@ -1,6 +1,7 @@
 #header_logo
 {
-	background: skyblue;
+	background-image: url('/assets/images/matlogo.png');
+	background-position: 50% 50%;
 	height: 175px;
 }
 

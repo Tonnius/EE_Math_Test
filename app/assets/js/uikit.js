@@ -1872,12 +1872,15 @@
         this.element = $element.on("click", this.options.toggle, function(e) {
             e.preventDefault();
             $this.show(this);
-            history.pushState(null, null, "#"+$(this).attr('id'));
+            if(!!(window.history && history.pushState))
+                history.pushState(null, null, "#"+$(this).attr('id'));
         });
 
         $(window).on('hashchange', function() {
             if($(window.location.hash).prop('tagName') == "LI")
                 $this.show($(window.location.hash));
+            else
+                $this.show(0);
         });
 
         if (this.options.connect) {
@@ -1986,6 +1989,8 @@
             var tab  = $(this).parent(),
                 item = $('<li><a href="javascript:void(0);">' + tab.text() + '</a></li>').on("click", function(e) {
                     $this.element.data("switcher").show(i);
+                    if(!!(window.history && history.pushState))
+                        history.pushState(null, null, "#"+$(tab).attr('id'));
                 });
 
             if (!$(this).parents(".uk-disabled:first").length) ul.append(item);

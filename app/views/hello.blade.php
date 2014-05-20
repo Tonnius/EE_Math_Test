@@ -14,14 +14,14 @@
 
 	<div class="videoOuter">
 		<div class="videoWrapper">
-			<iframe width="520" height="390" src="//www.youtube-nocookie.com/embed/J_0d19vJtB0?rel=0" frameborder="0" allowfullscreen></iframe>
+			<iframe width="520" height="390" src="//www.youtube-nocookie.com/embed/J_0d19vJtB0?rel=0" allowfullscreen></iframe>
 		</div>
 	</div>
 
 	<div class="container">
 
 		<?php AssetProcessor::add('protip', '../app/assets/js/protip.js', ['group' => 'footer']); ?>
-		<a href="#" id="protip">
+		<a href="#tip" id="protip">
 			<i class="icon icon-refresh"></i> Tänane nõuanne õppimiseks! &raquo;
 		</a>
 

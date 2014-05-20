@@ -36,7 +36,12 @@
 	<form class="uk-panel uk-panel-box uk-form" method="post" action="/teemad/{{urlencode($teema->name)}}/ylesanded">
 		@for ($i = 0, $c = count($tasks); $i < $c; ++$i) 
 			<div class="uk-form-row">
-				<label class="uk-form-label" for="answer_{{$i}}">Küsimus {{$i+1}}: {{$tasks[$i]->kirjeldus}}</label>
+				<label class="uk-form-label" for="answer_{{$i}}">
+					Küsimus {{$i+1}}: {{$tasks[$i]->kirjeldus}}
+					@if($tasks[$i]->pilt)
+					<img src="/uploads/images/{{$tasks[$i]->pilt}}" alt="Ülesanne" />
+					@endif
+				</label>
 				<input type="hidden" name="taskIds[]" value="{{$tasks[$i]->id}}" />
 				<input id="answer_{{$i}}" name="answers[]" class="uk-width-1-1 uk-form-large" type="text" placeholder="Vastus" required="required" />
 			</div>
