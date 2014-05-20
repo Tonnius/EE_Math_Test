@@ -1,0 +1,1 @@
+flashembed("triangleincircle", "http://www.mathopenref.com/flash/triangleincircle.swf", {width: 800, height: 600});
