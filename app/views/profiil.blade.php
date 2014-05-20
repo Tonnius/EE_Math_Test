@@ -25,7 +25,7 @@
 					foreach($results as $x => $x_value)
 					{
 						if($x_value->pakutud_vastus == $tasks[0]->korrektne_vastus) {
-							$success++;
+							++$success;
 						}
 					}
 
