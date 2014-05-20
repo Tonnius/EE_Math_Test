@@ -6,27 +6,27 @@
 		<a href="#">Teemad</a>
 		<!-- Mhm, ma tean et need on kitsa eksami teemad -->
 		<ul class="uk-nav-sub">
-			<li><a href="/teemad/{{urlencode('Arvuhulgad')}}">1. Arvuhulgad</a>
+			<li><a href="/teemad/{{rawurlencode('Arvuhulgad')}}">1. Arvuhulgad</a>
 				<ul>
-					<li><a href="/teemad/{{urlencode('Avaldised')}}">Avaldised</a></li>
-					<li><a href="/teemad/{{urlencode('Võrrandid ja võrratused')}}">Võrrandid ja võrratused</a></li>
+					<li><a href="/teemad/{{rawurlencode('Avaldised')}}">Avaldised</a></li>
+					<li><a href="/teemad/{{rawurlencode('Võrrandid ja võrratused')}}">Võrrandid ja võrratused</a></li>
 				</ul>
 			</li>
-			<li><a href="/teemad/{{urlencode('Trigonomeetria')}}">2. Trigonomeetria</a></li>
-			<li><a href="/teemad/{{urlencode('Vektor tasandil')}}">3. Vektor tasandil</a>
+			<li><a href="/teemad/{{rawurlencode('Trigonomeetria')}}">2. Trigonomeetria</a></li>
+			<li><a href="/teemad/{{rawurlencode('Vektor tasandil')}}">3. Vektor tasandil</a>
 				<ul>
-					<li><a href="/teemad/{{urlencode('Joone võrrand')}}">Joone võrrand</a></li>
+					<li><a href="/teemad/{{rawurlencode('Joone võrrand')}}">Joone võrrand</a></li>
 				</ul>
 			</li>
-			<li><a href="/teemad/{{urlencode('Tõenäosus ja statistika')}}">4. Tõenäosus ja statistika</a></li>
-			<li><a href="/teemad/{{urlencode('Funktsioonid I')}}">5. Funktsioonid I</a></li>
-			<li><a href="/teemad/{{urlencode('Funktsioonid II')}}">6. Funktsioonid II</a></li>
-			<li><a href="/teemad/{{urlencode('Tasandilised kujundid')}}">7. Tasandilised kujundid</a>
+			<li><a href="/teemad/{{rawurlencode('Tõenäosus ja statistika')}}">4. Tõenäosus ja statistika</a></li>
+			<li><a href="/teemad/{{rawurlencode('Funktsioonid I')}}">5. Funktsioonid I</a></li>
+			<li><a href="/teemad/{{rawurlencode('Funktsioonid II')}}">6. Funktsioonid II</a></li>
+			<li><a href="/teemad/{{rawurlencode('Tasandilised kujundid')}}">7. Tasandilised kujundid</a>
 				<ul>
-					<li><a href="/teemad/{{urlencode('Integraal')}}">Integraal</a></li>
+					<li><a href="/teemad/{{rawurlencode('Integraal')}}">Integraal</a></li>
 				</ul>
 			</li>
-			<li><a href="/teemad/{{urlencode('Stereomeetria')}}">8. Stereomeetria</a></li>
+			<li><a href="/teemad/{{rawurlencode('Stereomeetria')}}">8. Stereomeetria</a></li>
 		</ul>
 	</li>
 

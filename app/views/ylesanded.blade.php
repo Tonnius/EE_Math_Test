@@ -4,7 +4,7 @@
 <ul class="uk-breadcrumb">
 	<li><a href="/">Avaleht</a></li>
 	<li><span>Teemad</span></li>
-	<li><span><a href="/teemad/{{urlencode($teema->name)}}">{{$teema->name}}</a></span></li>
+	<li><span><a href="/teemad/{{rawurlencode($teema->name)}}">{{$teema->name}}</a></span></li>
 	<li class="uk-active"><span>Ülesanded</span></li>
 </ul>
 @endsection
@@ -33,7 +33,7 @@
 		?>
 	@endif
 
-	<form class="uk-panel uk-panel-box uk-form" method="post" action="/teemad/{{urlencode($teema->name)}}/ylesanded">
+	<form class="uk-panel uk-panel-box uk-form" method="post" action="/teemad/{{rawurlencode($teema->name)}}/ylesanded">
 		@for ($i = 0, $c = count($tasks); $i < $c; ++$i) 
 			<div class="uk-form-row">
 				<label class="uk-form-label" for="answer_{{$i}}">
