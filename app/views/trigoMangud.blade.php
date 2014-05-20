@@ -13,9 +13,13 @@
 	
 	<h1>Mängud ja abistavad visualiseeringud</h1>
 	<p>Mäng aitab mõista kolmnurga siseringjoone teket ning selle raadiuse arvutamist.</p>
-	<div id="triangleincircle"></div>
+	<div class="videoWrapper"><div id="triangleincircle"></div></div>
 
-	<?php AssetProcessor::add('triangleincircle_js', '../app/assets/js/triangleincircle.js', ['group' => 'footer']); ?>
+	<?php 
+	AssetProcessor::cdn('swfobject', '//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js');
+	AssetProcessor::add('triangleincircle_js', '../app/assets/js/triangleincircle.js', ['group' => 'footer']);
+
+	 ?>
 
 	<h2>Arvutusvalem</h2>
 
