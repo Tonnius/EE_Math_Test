@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-	<h1>Profiil</h1>
+	<h1>{{$user->username}}</h1>
 
 	<div class="uk-width-medium-1-1 uk-container-left">
 		<ul class="uk-tab" data-uk-tab="{connect:'#login-options'}">
@@ -55,9 +55,9 @@
 				<div class="uk-panel uk-panel-box uk-panel-box-secondary">
 					<dl class="uk-description-list uk-description-list-horizontal">
 						<dt>Kasutajanimi:</dt>
-						<dd>{{Auth::user()->username}}</dd>
+						<dd>{{$user->username}}</dd>
 						<dt>E-mail:</dt>
-						<dd>{{Auth::user()->email}}</dd>
+						<dd>{{$user->email}}</dd>
 					</dl>
 					
 				</div>

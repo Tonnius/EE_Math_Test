@@ -60,6 +60,11 @@ Route::post('teemad/{teema}/ylesanded', array('before' => 'auth','uses' => 'Test
 Route::get('lisaYl', array('before' => 'auth|admin','uses' => 'YlController@InsertTestFields'));
 Route::post('lisaYl', array('before' => 'auth|admin','uses' => 'YlController@AddTest'));
 
+Route::get('opil', array('before' => 'auth|admin', 'uses' => 'ProfileController@GetAllUsers'));
+Route::model('user', 'User');
+Route::get('opil/{user}', array('before' => 'auth|admin', 'uses' => 'ProfileController@GetProfileInfoForUser'));
+
+
 Route::get('protip', array('uses' => 'ProtipController@Protip'));
 
 Route::get('profiil', array('before' => 'auth','uses' => 'ProfileController@GetProfileInfo'));
