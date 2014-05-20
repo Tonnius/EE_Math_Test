@@ -12,9 +12,9 @@
 
 	<div class="uk-width-medium-1-1 uk-container-left">
 		<ul class="uk-tab" data-uk-tab="{connect:'#login-options'}">
-			<li class="uk-active"><a href="">Progress</a></li>
-			<li><a href="">Kasutaja Info</a></li>
-			<li><a href="">Testide ajalugu</a></li>
+			<li id="progress" class="uk-active"><a href="#progress">Progress</a></li>
+			<li id="info"><a href="#info">Kasutaja Info</a></li>
+			<li id="history"><a href="#tere">Testide ajalugu</a></li>
 		</ul>
 
 		<ul id="login-options" class="uk-switcher uk-margin">

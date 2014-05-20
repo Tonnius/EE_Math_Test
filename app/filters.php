@@ -17,6 +17,7 @@ App::before(function($request)
 	AssetProcessor::add('custom_css', '../app/assets/css/custom.css');
 	AssetProcessor::cdn('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js');
 	AssetProcessor::add('uikit_js', '../app/assets/js/uikit.js', ['group' => 'footer']);
+	AssetProcessor::add('custom_js', '../app/assets/js/custom.js', ['group' => 'footer']);
 });
 
 

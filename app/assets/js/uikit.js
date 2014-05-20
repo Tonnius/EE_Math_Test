@@ -1872,6 +1872,12 @@
         this.element = $element.on("click", this.options.toggle, function(e) {
             e.preventDefault();
             $this.show(this);
+            history.pushState(null, null, "#"+$(this).attr('id'));
+        });
+
+        $(window).on('hashchange', function() {
+            if($(window.location.hash).prop('tagName') == "LI")
+                $this.show($(window.location.hash));
         });
 
         if (this.options.connect) {
@@ -1911,6 +1917,7 @@
 
                 this.connect.children().removeClass("uk-active").eq(index).addClass("uk-active");
             }
+
 
             this.element.trigger("uk.switcher.show", [active]);
             $(document).trigger("uk-check-display");

@@ -13,8 +13,8 @@
 
 			<div class="uk-width-medium-3-4 uk-container-center">
 			<ul class="uk-tab" data-uk-tab="{connect:'#login-options'}">
-				<li class="uk-active"><a href="">Kasutajanimi/parool</a></li>
-				<li><a href=""><i class="uk-icon-facebook"></i> facebook</a></li>
+				<li class="uk-active" id="credentials"><a href="#credentials">Kasutajanimi/parool</a></li>
+				<li id="facebook"><a href="#facebook"><i class="uk-icon-facebook"></i> facebook</a></li>
 			</ul>
 
 				@unless($errors->count() == 0)

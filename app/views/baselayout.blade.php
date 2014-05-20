@@ -19,7 +19,7 @@
 				<div class="uk-width-1-1 uk-hidden-small" id="header_logo">
 					@if(Auth::check())
 					<div id="header_avatar">
-						<img src="http://placekitten.com/125/125" width="125" height="125" alt="Avatar" />
+						<img class="uk-border-rounded" src="/assets/avatars/king_brick.png" width="125" height="125" alt="Avatar" />
 					</div>
 					@endif
 				</div>
