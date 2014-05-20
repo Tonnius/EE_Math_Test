@@ -80,3 +80,7 @@ Route::get('teemad/Trigonomeetria/trigoMangud', array('before' => 'auth', functi
 {
 	return View::make('trigoMangud');
 }));
+Route::get('kontakt', array('before' => 'auth', function()
+{
+	return View::make('kontakt');
+}));
