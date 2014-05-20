@@ -14,7 +14,7 @@
 
 	<div class="videoOuter">
 		<div class="videoWrapper">
-			<iframe width="520" height="390" src="//www.youtube-nocookie.com/embed/J_0d19vJtB0?rel=0" frameborder="0" allowfullscreen></iframe>
+			<iframe width="520" height="390" src="//www.youtube-nocookie.com/embed/J_0d19vJtB0?rel=0" allowfullscreen></iframe>
 		</div>
 	</div>
 
