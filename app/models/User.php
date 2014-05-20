@@ -83,4 +83,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 
+	public function is_admin()
+	{
+		return $this->user_level == 'administrator';
+	}
+
 }

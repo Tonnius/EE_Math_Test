@@ -42,6 +42,12 @@ Route::filter('auth', function()
 	if (Auth::guest()) return Redirect::guest('login');
 });
 
+Route::filter('admin', function()
+{
+	if(Auth::guest() || !Auth::user()->is_admin())
+		throw new Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+});
+
 
 Route::filter('auth.basic', function()
 {

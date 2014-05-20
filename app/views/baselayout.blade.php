@@ -35,7 +35,14 @@
 
 	<li class="uk-nav-divider"></li>
 	<li><a href="#">Kontakt</a></li>
+
+	@if(Auth::check() && Auth::user()->is_admin())
+	<li class="uk-nav-divider"></li>
+	<li class="uk-nav-header">Administraator</li>
+
 	<li @if (Request::is('lisaYl')) class="uk-active" @endif><a href="/lisaYl">Lisa ülesanne</a></li>
+	@endif
+
 @endsection
 
 <!doctype html>
@@ -59,7 +66,11 @@
 				<div class="uk-width-1-1 uk-hidden-small" id="header_logo">
 					@if(Auth::check())
 					<div id="header_avatar">
-						<img class="uk-border-rounded" src="/assets/avatars/king_brick.png" width="125" height="125" alt="Avatar" />
+						@if(Auth::user()->is_admin())
+							<img class="uk-border-rounded" src="/assets/avatars/king_brick.png" width="125" height="125" alt="Avatar" />
+						@else
+							<img class="uk-border-rounded" src="/assets/avatars/normal_brick.png" width="125" height="125" alt="Avatar" />
+						@endif
 					</div>
 					@endif
 				</div>

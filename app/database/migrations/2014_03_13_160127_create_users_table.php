@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration {
 			$table->string('email')->unique();
 			$table->string('facebookId')->nullable();
 			$table->string('remember_token', 100)->nullable();
+			$table->enum('user_level', array('regular_user', 'administrator'));
 			$table->timestamps();
 		});
 	}

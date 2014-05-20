@@ -57,8 +57,8 @@ Route::get('teemad/{teema}', array('before' => 'auth', function(Topic $teema)
 Route::get('teemad/{teema}/ylesanded', array('before' => 'auth','uses' => 'TestController@GetTest'));
 Route::post('teemad/{teema}/ylesanded', array('before' => 'auth','uses' => 'TestController@CheckTest')); 
 
-Route::get('lisaYl', array('before' => 'auth','uses' => 'YlController@InsertTestFields'));
-Route::post('lisaYl', array('before' => 'auth','uses' => 'YlController@AddTest'));
+Route::get('lisaYl', array('before' => 'auth|admin','uses' => 'YlController@InsertTestFields'));
+Route::post('lisaYl', array('before' => 'auth|admin','uses' => 'YlController@AddTest'));
 
 Route::get('protip', array('uses' => 'ProtipController@Protip'));
 
