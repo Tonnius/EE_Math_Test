@@ -12,9 +12,9 @@
 @section('content')
 	
 	<h1>Videomaterjalid</h1>
-	<iframe width="560" height="315" src="//www.youtube.com/embed/uNbFu2X1sUQ" frameborder="0" allowfullscreen></iframe>
-	
-	<p> Inglise keeles:</p>
-	<iframe width="560" height="315" src="//www.youtube.com/embed/Jsiy4TxgIME?list=PL8E17FF862BCE5943" frameborder="0" allowfullscreen></iframe>
+	<div class="videoOuter"><div class="videoWrapper"><iframe width="520" height="390" src="//www.youtube-nocookie.com/embed/uNbFu2X1sUQ?rel=0" allowfullscreen></iframe></div></div>
+
+	<p>Inglise keeles:</p>
+	<div class="videoOuter"><div class="videoWrapper"><iframe width="520" height="390" src="//www.youtube-nocookie.com/embed/Jsiy4TxgIME?list=PL8E17FF862BCE5943?rel=0" allowfullscreen></iframe></div></div>
 
 @endsection
