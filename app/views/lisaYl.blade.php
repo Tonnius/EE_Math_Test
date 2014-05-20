@@ -12,13 +12,19 @@
 	@if(Session::has('result'))
 		<div class="uk-alert uk-alert-success">{{ Session::get('result') }}</div>
 	@endif
-	<form class="uk-panel uk-panel-box uk-form" method="post" action="/lisaYl">
+	<form class="uk-panel uk-panel-box uk-form" method="post" action="/lisaYl" enctype="multipart/form-data">
 		<div class="uk-form-row">
 			<input name="kirjeldus" class="uk-width-1-1 uk-form-large" type="text" placeholder="Kirjeldus" required="required" />
 		</div>
 
 		<div class="uk-form-row">
 			<input name="vastus" class="uk-width-1-1 uk-form-large" type="text" placeholder="Korrektne vastus" required />
+		</div>
+
+		<div class="uk-form-row">
+			<label class="uk-form-label" for="pilt">Kirjeldav pilt (png, gif, jpeg, jpg):</label>
+			{{Form::file('pilt')}}
+			<!--input id="pilt" name="pilt" class="uk-width-1-1 uk-form-large" type="file" placeholder="Pilt" /-->
 		</div>
 
 		<div class="uk-form-row">
