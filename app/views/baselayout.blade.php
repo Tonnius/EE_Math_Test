@@ -41,7 +41,7 @@
 	<li class="uk-nav-header">Administraator</li>
 
 	<li @if (Request::is('lisaYl')) class="uk-active" @endif><a href="/lisaYl">Lisa ülesanne</a></li>
-	<li @if (Request::is('opil*')) class="uk-active" @endif><a href="/opil">Õpilased</a></li>
+	<li @if (Request::is('opil*')) class="uk-active" @endif><a href="/opil">Kasutajad</a></li>
 	@endif
 
 @endsection
