@@ -1,7 +1,7 @@
 @extends('baselayout')
 
 @section('content')
-	<table class="uk-table">
+	<table class="uk-table uk-table-striped">
 		<thead>
 			<tr>
 				<th>Kasutajanimi</th>
