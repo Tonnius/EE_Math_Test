@@ -1879,6 +1879,8 @@
         $(window).on('hashchange', function() {
             if($(window.location.hash).prop('tagName') == "LI")
                 $this.show($(window.location.hash));
+            else
+                $this.show(0);
         });
 
         if (this.options.connect) {
