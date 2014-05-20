@@ -39,7 +39,7 @@
 				<label class="uk-form-label" for="answer_{{$i}}">
 					Küsimus {{$i+1}}: {{$tasks[$i]->kirjeldus}}
 					@if($tasks[$i]->pilt)
-					<img src="/uploads/images/{{$tasks[$i]->pilt}}" alt="Ülesanne" />
+					<br/><img src="/uploads/images/{{$tasks[$i]->pilt}}" alt="Ülesanne" /><br/>
 					@endif
 				</label>
 				<input type="hidden" name="taskIds[]" value="{{$tasks[$i]->id}}" />
