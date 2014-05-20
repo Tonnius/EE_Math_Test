@@ -1,3 +1,43 @@
+@section('navitems')
+	<li @if (Request::is('/')) class="uk-active" @endif><a href="/">Avaleht</a></li>
+	<li @if (Request::is('eksamist')) class="uk-active" @endif><a href="/eksamist">Eksamist</a></li>
+
+	<li class="uk-parent @if (Request::is('teemad/*')) uk-active @endif">
+		<a href="#">Teemad</a>
+		<!-- Mhm, ma tean et need on kitsa eksami teemad -->
+		<ul class="uk-nav-sub">
+			<li><a href="/teemad/{{urlencode('Arvuhulgad')}}">1. Arvuhulgad</a>
+				<ul>
+					<li><a href="/teemad/{{urlencode('Avaldised')}}">Avaldised</a></li>
+					<li><a href="/teemad/{{urlencode('Võrrandid ja võrratused')}}">Võrrandid ja võrratused</a></li>
+				</ul>
+			</li>
+			<li><a href="/teemad/{{urlencode('Trigonomeetria')}}">2. Trigonomeetria</a></li>
+			<li><a href="/teemad/{{urlencode('Vektor tasandil')}}">3. Vektor tasandil</a>
+				<ul>
+					<li><a href="/teemad/{{urlencode('Joone võrrand')}}">Joone võrrand</a></li>
+				</ul>
+			</li>
+			<li><a href="/teemad/{{urlencode('Tõenäosus ja statistika')}}">4. Tõenäosus ja statistika</a></li>
+			<li><a href="/teemad/{{urlencode('Funktsioonid I')}}">5. Funktsioonid I</a></li>
+			<li><a href="/teemad/{{urlencode('Funktsioonid II')}}">6. Funktsioonid II</a></li>
+			<li><a href="/teemad/{{urlencode('Tasandilised kujundid')}}">7. Tasandilised kujundid</a>
+				<ul>
+					<li><a href="/teemad/{{urlencode('Integraal')}}">Integraal</a></li>
+				</ul>
+			</li>
+			<li><a href="/teemad/{{urlencode('Stereomeetria')}}">8. Stereomeetria</a></li>
+		</ul>
+	</li>
+
+	<li><a href="/kuidasOppida">Kuidas õppida</a></li>
+	<li @if (Request::is('kysiAbi')) class="uk-active" @endif><a href="/kysiAbi">Küsi abi</a></li>
+
+	<li class="uk-nav-divider"></li>
+	<li><a href="#">Kontakt</a></li>
+	<li @if (Request::is('lisaYl')) class="uk-active" @endif><a href="/lisaYl">Lisa ülesanne</a></li>
+@endsection
+
 <!doctype html>
 <html lang="et">
 <head>
@@ -36,60 +76,18 @@
 					@endif
 				    </li>
 				</ul>
-			
 
-			<div class="uk-grid">
-				
-			
-
-			<div class="uk-width-1-5 uk-hidden-small">
-
-
-				<ul class="uk-nav uk-nav-side uk-nav-parent-icon" data-uk-nav>
-					<li @if (Request::is('/')) class="uk-active" @endif><a href="/">Avaleht</a></li>
-					<li @if (Request::is('eksamist')) class="uk-active" @endif><a href="/eksamist">Eksamist</a></li>
-
-					<li class="uk-parent @if (Request::is('teemad/*')) uk-active @endif">
-						<a href="#">Teemad</a>
-						<!-- Mhm, ma tean et need on kitsa eksami teemad -->
-						<ul class="uk-nav-sub">
-							<li><a href="/teemad/{{urlencode('Arvuhulgad')}}">1. Arvuhulgad</a>
-								<ul>
-									<li><a href="/teemad/{{urlencode('Avaldised')}}">Avaldised</a></li>
-									<li><a href="/teemad/{{urlencode('Võrrandid ja võrratused')}}">Võrrandid ja võrratused</a></li>
-								</ul>
-							</li>
-							<li><a href="/teemad/{{urlencode('Trigonomeetria')}}">2. Trigonomeetria</a></li>
-							<li><a href="/teemad/{{urlencode('Vektor tasandil')}}">3. Vektor tasandil</a>
-								<ul>
-									<li><a href="/teemad/{{urlencode('Joone võrrand')}}">Joone võrrand</a></li>
-								</ul>
-							</li>
-							<li><a href="/teemad/{{urlencode('Tõenäosus ja statistika')}}">4. Tõenäosus ja statistika</a></li>
-							<li><a href="/teemad/{{urlencode('Funktsioonid I')}}">5. Funktsioonid I</a></li>
-							<li><a href="/teemad/{{urlencode('Funktsioonid II')}}">6. Funktsioonid II</a></li>
-							<li><a href="/teemad/{{urlencode('Tasandilised kujundid')}}">7. Tasandilised kujundid</a>
-								<ul>
-									<li><a href="/teemad/{{urlencode('Integraal')}}">Integraal</a></li>
-								</ul>
-							</li>
-							<li><a href="/teemad/{{urlencode('Stereomeetria')}}">8. Stereomeetria</a></li>
+				<div class="uk-grid">
+					<div class="uk-width-1-5 uk-hidden-small">
+						<ul class="uk-nav uk-nav-side uk-nav-parent-icon" data-uk-nav>
+							@yield('navitems')
 						</ul>
-					</li>
+					</div>
 
-					<li><a href="/kuidasOppida">Kuidas õppida</a></li>
-					<li @if (Request::is('kysiAbi')) class="uk-active" @endif><a href="/kysiAbi">Küsi abi</a></li>
-
-					<li class="uk-nav-divider"></li>
-					<li><a href="#">Kontakt</a></li>
-					<li @if (Request::is('lisaYl')) class="uk-active" @endif><a href="/lisaYl">Lisa ülesanne</a></li>
-				</ul>
-			</div>
-
-			<div class="uk-width-1-1 uk-width-medium-4-5">
-				@yield('content')
-			</div>
-</div>
+					<div class="uk-width-1-1 uk-width-medium-4-5">
+						@yield('content')
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -98,42 +96,7 @@
 	<div id="offcanvas" class="uk-offcanvas">
 		<div class="uk-offcanvas-bar">
 			<ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
-				<li @if (Request::is('/')) class="uk-active" @endif><a href="/">Avaleht</a></li>
-				<li @if (Request::is('eksamist')) class="uk-active" @endif><a href="/eksamist">Eksamist</a></li>
-
-				<li class="uk-parent">
-					<a href="#">Teemad</a>
-					<!-- Mhm, ma tean et need on kitsa eksami teemad -->
-					<ul class="uk-nav-sub">
-						<li><a href="#">1. Arvuhulgad</a>
-							<ul>
-								<li><a href="#">Avaldised</a></li>
-								<li><a href="#">Võrrandid &amp; võrratused</a></li>
-							</ul>
-						</li>
-						<li><a href="#">2. Trigonomeetria</a></li>
-						<li><a href="#">3. Vektor tasandil</a>
-							<ul>
-								<li><a href="#">Joone võrrand</a></li>
-							</ul>
-						</li>
-						<li><a href="#">4. Tõenäosus ja statistika</a></li>
-						<li><a href="#">5. Funktsioonid I</a></li>
-						<li><a href="#">6. Funktsioonid II</a></li>
-						<li><a href="#">7. Tasandilised kujundid</a>
-							<ul>
-								<li><a href="#">Integraal</a></li>
-							</ul>
-						</li>
-						<li><a href="#">8. Stereomeetria</a></li>
-					</ul>
-				</li>
-
-				<li><a href="#">Kuidas õppida</a></li>
-				<li><a href="#">Küsi abi</a></li>
-
-				<li class="uk-nav-divider"></li>
-				<li><a href="#">Kontakt</a></li>
+				@yield('navitems')
 			</ul>
 		</div>
 	</div>
