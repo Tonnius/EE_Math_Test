@@ -17,6 +17,7 @@ class CreateTasksTable extends Migration {
 			$table->increments('id');
 			$table->string('kirjeldus');
 			$table->string('korrektne_vastus');
+			$table->string('pilt');
 			$table->integer('topic_id')->unsigned();
 			//$table->string('formula'); 
 			//$table->foreign('test_id')->references('id')->on('tests');
