@@ -68,3 +68,15 @@ Route::get('opil/{user}', array('before' => 'auth|admin', 'uses' => 'ProfileCont
 Route::get('protip', array('uses' => 'ProtipController@Protip'));
 
 Route::get('profiil', array('before' => 'auth','uses' => 'ProfileController@GetProfileInfo'));
+Route::get('teemad/Trigonomeetria/trigoMaterjalid', array('before' => 'auth', function()
+{
+	return View::make('trigoMaterjalid');
+}));
+Route::get('teemad/Trigonomeetria/trigoVideoMaterjalid', array('before' => 'auth', function()
+{
+	return View::make('trigoVideoMaterjalid');
+}));
+Route::get('teemad/Trigonomeetria/trigoMangud', array('before' => 'auth', function()
+{
+	return View::make('trigoMangud');
+}));
