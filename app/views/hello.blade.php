@@ -21,7 +21,7 @@
 	<div class="container">
 
 		<?php AssetProcessor::add('protip', '../app/assets/js/protip.js', ['group' => 'footer']); ?>
-		<a href="#" id="protip">
+		<a href="#tip" id="protip">
 			<i class="icon icon-refresh"></i> Tänane nõuanne õppimiseks! &raquo;
 		</a>
 
