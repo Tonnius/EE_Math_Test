@@ -34,7 +34,7 @@
 	<li @if (Request::is('kysiAbi')) class="uk-active" @endif><a href="/kysiAbi">Küsi abi</a></li>
 
 	<li class="uk-nav-divider"></li>
-	<li><a href="/kontakt">Kontakt</a></li>
+	<li @if (Request::is('kontakt')) class="uk-active" @endif><a href="/kontakt">Kontakt</a></li>
 
 	@if(Auth::check() && Auth::user()->is_admin())
 	<li class="uk-nav-divider"></li>
