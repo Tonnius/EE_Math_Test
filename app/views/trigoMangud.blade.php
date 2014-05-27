@@ -21,10 +21,10 @@
 
 	 ?>
 
-	<h2>Arvutusvalem</h2>
+	<h2>Siseringjoone arvutusvalem</h2>
 
 	<b>Raadius</b> = <img src="http://www.mathopenref.com/images/equations/triangleincenterradius.gif" alt="">, kus <b>a</b> on kolmnurga pindala. <br />
-	<p>Üleval paiknevas näites teame me juba kõikide kolmnurga külgede pikkusi, seeg kasutame Heroni valemit (vt <a href="/teemad/Trigonomeetria/trigoMaterjalid">Tekstilised materjalid</a>).</p>
+	<p>Üleval paiknevas näites teame me juba kõikide kolmnurga külgede pikkusi, seega kasutame Heroni valemit (vt <a href="/teemad/Trigonomeetria/trigoMaterjalid">Tekstilised materjalid</a>).</p>
 	<p><b>p</b> on kolmnurga ümbermõõt ehk kõikide külgede summa.</p>
 	<p>Allikas: <a href="http://www.mathopenref.com/triangleincircle.html">www.mathopenref.com</a></p>
 @endsection
