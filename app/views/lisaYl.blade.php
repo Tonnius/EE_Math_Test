@@ -23,7 +23,7 @@
 
 		<div class="uk-form-row">
 			<label class="uk-form-label" for="pilt">Kirjeldav pilt (png, gif, jpeg, jpg):</label>
-			<input id="pilt" name="pilt" class="uk-width-1-1 uk-form-large" type="file" placeholder="Pilt" />
+			<input id="pilt" name="pilt" class="uk-width-1-1 uk-form-large" type="file" />
 		</div>
 
 		<div class="uk-form-row">
